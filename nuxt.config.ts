@@ -94,7 +94,7 @@ export default defineNuxtConfig({
 	},
 	pwa: {
 		manifest: false,
-		strategies: 'generateSW',
+		strategies: 'injectManifest',
 	},
 	runtimeConfig: {
 		public: {
