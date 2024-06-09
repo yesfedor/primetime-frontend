@@ -9,7 +9,7 @@ WORKDIR /app
 
 RUN apk update && apk add --no-cache git
 
-RUN /bin/sh -c "git clone --single-branch --branch $BRANCH_NAME https://github.com/yesfedor/nuxt-core-template.git ."
+RUN /bin/sh -c "git clone --single-branch --branch $BRANCH_NAME https://github.com/yesfedor/primetime-frontend.git ."
 
 COPY . .
 

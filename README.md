@@ -1,7 +1,6 @@
-# Nuxt Core Template
+# PrimeTime Frontend
 
-This project is a template, for quickly getting started on your new project.
-When creating the template, many requests from businesses were taken into account, and the convenience of development.
+This project is client side best online cinema.
 
 ---
 
@@ -9,7 +8,7 @@ When creating the template, many requests from businesses were taken into accoun
 
 Thus, the following plugins are now configured and supported:
 
-1. DotEnv files in [./environments]() folder supported stage with balanced setting: local, dev, stage, prod
+1. DotEnv files in [environments](environments) folder supported stage with balanced setting: local, dev, stage, prod
 2. Typescript 5 + Vue 3 + Nuxt 3
 3. Eslint, Stylelint (without lint-staged)
 4. SCSS
@@ -34,8 +33,8 @@ Thus, the following plugins are now configured and supported:
 
 ### Docs
 
-1. [Arhitecute](docs/arhitecute.md) - For a quick start, the project philosophy is described, which you can change
-2. [Stylesheets](assets/stylesheets/README.md) - For a quick start, the philosophy of styles is described. SCSS is included
+1. [Architecture](docs/arhitecute.md) - For a quick start, the project philosophy is described, which you can change
+2. [Stylesheets](app/assets/stylesheets/README.md) - For a quick start, the philosophy of styles is described. SCSS is included
 
 ### Installation
 

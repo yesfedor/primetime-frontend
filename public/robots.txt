@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://primetime.su/sitemap-root.xml
