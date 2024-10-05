@@ -1,14 +1,23 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
+import vuetify from 'vite-plugin-vuetify'
+
 import experimentalConfig from './configs/experimental.config'
 import headConfig from './configs/head.config'
 import pwaConfig from './configs/pwa.config'
+
 import viteConfig from './configs/vite.config'
 
 export default defineNuxtConfig({
   // https://nuxt.com/docs/api/configuration/nuxt-config
   app: {
     head: headConfig,
+  },
+
+  build: {
+    transpile: [
+      'vuetify',
+    ],
   },
 
   compatibilityDate: '2024-09-09',
@@ -101,6 +110,15 @@ export default defineNuxtConfig({
     '@nuxtjs/device',
     // https://storybook.nuxtjs.org/getting-started/setup
     '@nuxtjs/storybook',
+    // https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({
+          autoImport: true,
+        }))
+      })
+    },
   ],
 
   nitro: {

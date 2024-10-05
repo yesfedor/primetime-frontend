@@ -4,10 +4,16 @@
 
 <template>
   <layout-provider>
-    <div class="app-layout app-layout--default">
-      <div class="app-layout__content">
+    <v-app>
+      <layout-base-system-bar />
+
+      <layout-base-aside />
+      <layout-base-header />
+
+      <v-main>
+        <v-divider />
         <slot />
-      </div>
-    </div>
+      </v-main>
+    </v-app>
   </layout-provider>
 </template>

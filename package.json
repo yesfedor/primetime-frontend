@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^3.5.1",
+    "@mdi/font": "^7.4.47",
     "@nuxt/devtools": "latest",
     "@nuxt/eslint": "^0.5.6",
     "@nuxtjs/device": "^3.2.4",
@@ -54,7 +55,9 @@
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-scss": "^6.7.0",
     "vite-plugin-eslint2": "^4.4.2",
+    "vite-plugin-vuetify": "^2.0.3",
     "vue": "latest",
-    "vue-router": "^4.4.5"
+    "vue-router": "^4.4.5",
+    "vuetify": "^3.7.2"
   }
 }
