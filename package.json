@@ -1,5 +1,5 @@
 {
-  "name": "nuxt-core-template",
+  "name": "primetime-frontend",
   "type": "module",
   "version": "3.13.2",
   "private": true,
@@ -38,6 +38,7 @@
     "@vee-validate/yup": "^4.12.6",
     "@vite-pwa/nuxt": "^0.10.5",
     "@vueuse/nuxt": "^11.1.0",
+    "axios": "^1.7.7",
     "consola": "^3.2.3",
     "eslint": "^9.11.1",
     "eslint-plugin-format": "^0.1.2",
@@ -54,10 +55,13 @@
     "stylelint-config-standard-scss": "^13.1.0",
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-scss": "^6.7.0",
+    "swiper": "^11.0.5",
     "vite-plugin-eslint2": "^4.4.2",
     "vite-plugin-vuetify": "^2.0.3",
     "vue": "latest",
     "vue-router": "^4.4.5",
+    "vue-toastification": "^2.0.0-rc.5",
+    "vue3-text-clamp": "^0.1.2",
     "vuetify": "^3.7.2"
   }
 }

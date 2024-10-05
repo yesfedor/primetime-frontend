@@ -63,7 +63,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    defaultLocale: 'en',
+    defaultLocale: 'ru',
     detectBrowserLanguage: {
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
@@ -73,11 +73,15 @@ export default defineNuxtConfig({
     lazy: true,
     locales: [
       {
+        code: 'ru',
+        file: 'ru.ts',
+      },
+      {
         code: 'en',
         file: 'en.ts',
       },
     ],
-    strategy: 'prefix_except_default',
+    strategy: 'no_prefix',
     vueI18n: './configs/i18n.config.ts',
   },
 
@@ -92,9 +96,9 @@ export default defineNuxtConfig({
 
   modules: [
     // https://eslint.nuxt.com/packages/module
-    '@nuxt/eslint',
+    // '@nuxt/eslint',
     // https://nuxt.com/modules/stylelint
-    '@nuxtjs/stylelint-module',
+    // '@nuxtjs/stylelint-module',
     // https://nuxt.com/modules/pinia
     '@pinia/nuxt',
     // https://nuxt.com/modules/vite-pwa-nuxt

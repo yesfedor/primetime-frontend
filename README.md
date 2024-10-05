@@ -1,7 +1,6 @@
-# Nuxt Core Template
+# PrimeTime Frontend
 
-This project is a template, for quickly getting started on your new project.
-When creating the template, many requests from businesses were taken into account, and the convenience of development.
+A super-duper pet project with which I "play" with different technologies in the web, as well as this is a great resource for watching films, series and anime.
 
 ---
 

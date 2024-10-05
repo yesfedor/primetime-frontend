@@ -1,19 +1,20 @@
 <script setup lang="ts">
-
+import AppHeader from '~/components/common/Header.vue'
+import AppNavigationBottom from '~/components/navigation/Bottom.vue'
+import AppNavigationDrawer from '~/components/navigation/Drawer.vue'
 </script>
 
 <template>
   <layout-provider>
     <v-app>
-      <layout-base-system-bar />
-
-      <layout-base-aside />
-      <layout-base-header />
-
+      <client-only>
+        <AppHeader />
+        <AppNavigationDrawer />
+      </client-only>
       <v-main>
-        <v-divider />
         <slot />
       </v-main>
+      <AppNavigationBottom />
     </v-app>
   </layout-provider>
 </template>
