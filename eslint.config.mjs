@@ -100,7 +100,6 @@ export default withNuxt(
       // style
       'style/member-delimiter-style': 'off',
       'style/semi': ['error', 'never'],
-      'style/brace-style': ['warn', '1tbs'],
 
       // node
       'node/prefer-global/process': 'off',
@@ -109,6 +108,5 @@ export default withNuxt(
       'curly': ['warn', 'all'],
       'dot-notation': 'error',
     },
-    overrides: [],
   }),
 )

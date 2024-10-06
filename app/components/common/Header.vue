@@ -5,9 +5,11 @@
     app
   >
     <AppNavigationToggle />
+
     <v-app-bar-title>
       <AppLogo />
     </v-app-bar-title>
+
     <template #append>
       <AppHeaderMenu />
     </template>

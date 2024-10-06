@@ -1,7 +1,6 @@
 <template>
   <v-btn
     :to="{ name: 'index' }"
-    :exact="false"
     :ripple="false"
     variant="text"
     class="app-logo px-0 text-body-1 text-uppercase"
@@ -24,8 +23,9 @@ export default defineComponent({
   font-family: $font-montserrat-alt !important;
   letter-spacing: 4px !important;
 
-  .v-btn__overlay, &:hover .v-btn__overlay {
-    opacity: 0;
+  .v-btn__overlay, .v-btn__underlay, &:hover .v-btn__overlay, &:hover .v-btn__underlay {
+    visibility: hidden;
+    opacity: 0 !important;
   }
 }
 </style>
