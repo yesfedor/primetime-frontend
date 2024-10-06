@@ -16,6 +16,10 @@ const nuxtVersion = ref(nuxtApp.versions.nuxt)
     <p>This is production: PrimeTime Client v{{ nuxtVersion }}</p>
 
     <p>Host: {{ baseUrl }}</p>
+
+    <p>
+      <nuxt-link :to="{ name: 'index' }">Main Page</nuxt-link>
+    </p>
   </section>
 </template>
 
