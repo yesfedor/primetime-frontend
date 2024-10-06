@@ -14,4 +14,4 @@ npm ci
 npm run build
 
 BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose build --no-cache
-docker-compose up -d --build --force-recreate
+BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose up -d --build --force-recreate
