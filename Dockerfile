@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY .output /app/.output
 
-RUN /bin/sh -c "ls -a"
+RUN /bin/sh -c "cd /app/ && ls -a"
 
 EXPOSE 3000
 
-CMD ["node", "/app/server/index.mjs"]
+CMD ["node", "/app/.output/server/index.mjs"]
