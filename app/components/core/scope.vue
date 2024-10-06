@@ -7,6 +7,7 @@
     <nuxt-loading-indicator
       :throttle="0"
       :duration="5e3"
+      color="#fff"
     />
   </section>
 </template>

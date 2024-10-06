@@ -8,8 +8,8 @@ export default <Partial<NuxtOptions['pwa']>> {
   },
   registerType: 'autoUpdate',
   manifest: {
-    id: 'su.iny.nuxt-core-template',
-    name: 'Nuxt Core Template v3.12.2',
+    id: 'su.primetime',
+    name: 'PrimeTime - online cinema',
     display: 'standalone',
     display_override: ['window-controls-overlay', 'standalone'],
     short_name: 'Nuxt',
@@ -40,7 +40,7 @@ export default <Partial<NuxtOptions['pwa']>> {
   },
   workbox: {
     globPatterns: ['**\\/*.{js,wasm,css,html,webmanifest}'],
-    navigateFallback: '/offline.html',
+    navigateFallback: undefined,
     navigationPreload: true,
     skipWaiting: true,
     templatedURLs: {
