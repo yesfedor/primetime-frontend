@@ -11,6 +11,6 @@ cp ./environments/production.env .env
 npm ci
 npm run build
 
-docker-compose up --build -d --build-arg BRANCH_NAME=main --build-arg ENVIRONMENT_NAME=production --build-arg PORT=3400
+BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose up --build -d
 
 docker builder prune -f
