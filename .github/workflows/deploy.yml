@@ -40,7 +40,7 @@ jobs:
 
       - name: Deploying
         run: |
-          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "\
+          ssh -t ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "\
           cd /home/projects/primetime-frontend-${{ steps.set-env.outputs.ENVIRONMENT_NAME }} && \
           sudo -u root sh ./deploy.sh"
 
