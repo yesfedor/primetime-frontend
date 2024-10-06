@@ -11,7 +11,9 @@ export default {
     'media-query-no-invalid': null,
     'scss/at-rule-no-unknown': true,
     'scss/dollar-variable-pattern': '^-?[a-z][a-z0-9]*(--?[a-z0-9]+)*$',
-    'scss/no-global-function-names': true,
+    'scss/no-global-function-names': null,
     'scss/selector-no-redundant-nesting-selector': true,
+    'selector-class-pattern': null,
+    'rule-empty-line-before': null,
   },
 }

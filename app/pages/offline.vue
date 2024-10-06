@@ -13,7 +13,7 @@ const nuxtVersion = ref(nuxtApp.versions.nuxt)
   <section class="app-page-offline">
     <h1>This is prerender page in offline</h1>
 
-    <p>This is production: Nuxt Core Template v{{ nuxtVersion }}</p>
+    <p>This is production: PrimeTime Client v{{ nuxtVersion }}</p>
 
     <p>Host: {{ baseUrl }}</p>
   </section>

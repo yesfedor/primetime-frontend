@@ -9,6 +9,8 @@ export default defineNuxtRouteMiddleware((to) => {
           kpid: to.params.kpid,
         },
       })
+    } else {
+      return navigateTo(getFailRoute(to))
     }
   }
 
