@@ -17,7 +17,7 @@ const nuxtVersion = ref(nuxtApp.versions.nuxt)
 
     <p>Host: {{ baseUrl }}</p>
 
-    <p>
+    <p class="mt-3">
       <nuxt-link :to="{ name: 'index' }">Home Page</nuxt-link>
     </p>
   </section>
