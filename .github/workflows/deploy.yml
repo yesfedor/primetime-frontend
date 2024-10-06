@@ -42,7 +42,7 @@ jobs:
         run: |
           ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "\
           cd /home/projects/primetime-frontend-${{ steps.set-env.outputs.ENVIRONMENT_NAME }} && \
-          sudo -u user sh ./deploy.sh"
+          sudo -u root sh ./deploy.sh"
 
         env:
           PORT: ${{ steps.set-env.outputs.PORT }}
