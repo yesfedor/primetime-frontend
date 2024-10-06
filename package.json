@@ -38,7 +38,7 @@
     "@vee-validate/yup": "^4.12.6",
     "@vite-pwa/nuxt": "^0.10.5",
     "@vueuse/nuxt": "^11.1.0",
-    "axios": "^1.7.7",
+    "vue-axios": "~3.5.2",
     "consola": "^3.2.3",
     "eslint": "^9.11.1",
     "eslint-plugin-format": "^0.1.2",
