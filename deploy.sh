@@ -8,9 +8,11 @@ git pull
 
 cp ./environments/production.env .env
 
+nvm install
+
 npm ci
 npm run build
 
-BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose up --build -d
+BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose up --build -d --force-recreate
 
 docker builder prune -f

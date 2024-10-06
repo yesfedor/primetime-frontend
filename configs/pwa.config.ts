@@ -43,32 +43,6 @@ export default <Partial<NuxtOptions['pwa']>> {
     navigateFallback: undefined,
     navigationPreload: true,
     skipWaiting: true,
-    templatedURLs: {
-      '/': '/offline.html',
-    },
-    runtimeCaching: [
-      {
-        urlPattern: /^\/(?!_nuxt|api|proxy)[^/]+(?:\/[^/]+)*$/,
-        handler: 'NetworkFirst',
-        options: {
-          cacheName: 'app-pages',
-          expiration: {
-            maxEntries: 250,
-            maxAgeSeconds: 14 * 24 * 60 * 60,
-          },
-        },
-      },
-      {
-        urlPattern: /\.(?:js|css)$/,
-        handler: 'StaleWhileRevalidate',
-        options: {
-          cacheName: 'assets-cache',
-          expiration: {
-            maxEntries: 250,
-            maxAgeSeconds: 14 * 24 * 60 * 60,
-          },
-        },
-      },
-    ],
+    runtimeCaching: [],
   },
 }

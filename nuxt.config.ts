@@ -16,6 +16,7 @@ export default defineNuxtConfig({
 
   build: {
     transpile: [
+      'axios',
       'vuetify',
     ],
   },
@@ -53,7 +54,7 @@ export default defineNuxtConfig({
       standalone: false,
       stylistic: true,
     },
-    checker: true,
+    checker: false,
   },
 
   experimental: experimentalConfig,
@@ -96,9 +97,9 @@ export default defineNuxtConfig({
 
   modules: [
     // https://eslint.nuxt.com/packages/module
-    // '@nuxt/eslint',
+    '@nuxt/eslint',
     // https://nuxt.com/modules/stylelint
-    // '@nuxtjs/stylelint-module',
+    '@nuxtjs/stylelint-module',
     // https://nuxt.com/modules/pinia
     '@pinia/nuxt',
     // https://nuxt.com/modules/vite-pwa-nuxt
