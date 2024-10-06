@@ -37,11 +37,17 @@ jobs:
           elif [ "${{ github.ref }}" == "refs/heads/main" ]; then
             echo "::set-output name=ENVIRONMENT_NAME::production"
           fi
+          if [[ "$GITHUB_REF" == refs/tags/* ]]; then
+            echo "::set-output name=TAG_NAME::$(echo "$GITHUB_REF" | sed -n 's/^.*tags\/\([^ ]*\).*/\1/p')"
+          else
+            echo "::set-output name=TAG_NAME::latest"
+          fi
 
       - name: Deploying
         run: |
           ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "\
           cd /home/projects/primetime-frontend-${{ steps.set-env.outputs.ENVIRONMENT_NAME }} && \
+          TAG_NAME=${{ steps.set-env.outputs.TAG_NAME }}
           sh ./deploy.sh"
 
         env:
