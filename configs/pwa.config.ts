@@ -40,9 +40,9 @@ export default <Partial<NuxtOptions['pwa']>> {
   },
   workbox: {
     globPatterns: ['**\\/*.{js,wasm,css,html,webmanifest}'],
-    navigateFallback: undefined,
-    navigationPreload: true,
     skipWaiting: true,
-    runtimeCaching: [],
+    navigateFallback: undefined,
+    navigationPreload: false,
+    runtimeCaching: undefined,
   },
 }
