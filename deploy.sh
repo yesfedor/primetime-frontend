@@ -8,6 +8,8 @@ git pull
 
 cp ./environments/production.env .env
 
+nvm install
+
 npm ci
 npm run build
 
