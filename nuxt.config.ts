@@ -125,11 +125,11 @@ export default defineNuxtConfig({
     },
   ],
 
-  nitro: {
-    prerender: {
-      routes: ['/offline'],
-    },
-  },
+  // nitro: {
+  //   prerender: {
+  //     routes: ['/offline'],
+  //   },
+  // },
 
   pinia: {
     storesDirs: ['./app/stores/**'],

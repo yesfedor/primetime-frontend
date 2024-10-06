@@ -1,4 +1,4 @@
-import Toast, { type PluginOptions, POSITION } from 'vue-toastification'
+import Toast, { type PluginOptions } from 'vue-toastification'
 
 export default defineNuxtPlugin({
   name: 'ui:vue-toastification',
@@ -6,7 +6,7 @@ export default defineNuxtPlugin({
   async setup(nuxtApp) {
     const options: PluginOptions = {
       maxToasts: 8,
-      position: POSITION.TOP_RIGHT,
+      position: 'top-right',
       shareAppContext: true,
       timeout: 2000,
       transition: 'Vue-Toastification__fade',
