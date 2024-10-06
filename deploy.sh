@@ -2,11 +2,9 @@
 ENVIRONMENT_NAME=production
 BRANCH_NAME=main
 
-echo
+source ~/.bashrc
 
 cd "/home/projects/primetime-frontend-${ENVIRONMENT_NAME}"
-
-ls -a
 
 docker-compose down
 
@@ -15,11 +13,6 @@ git reset --hard
 git pull
 
 cp "./environments/${ENVIRONMENT_NAME}.env" .env
-
-node -v
-nvm --help
-
-ls -a
 
 npm ci
 npm run build
