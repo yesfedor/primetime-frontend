@@ -3,6 +3,7 @@ version: '3.8'
 services:
   frontend:
     container_name: primetime-frontend-${ENVIRONMENT_NAME}
+    image: primetime-client:v1.0.0
     build:
       context: .
       args:
