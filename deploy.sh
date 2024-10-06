@@ -8,10 +8,18 @@ git pull
 
 cp ./environments/production.env .env
 
-docker builder prune -f
+source ~/.bashrc
+
+ls -a
+
+node -v
+nvm --help
 
 npm ci
 npm run build
 
-BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose build --no-cache -t primetme-frontend:latest
 BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose up -d --build --force-recreate
+
+docker builder prune -f
+
+
