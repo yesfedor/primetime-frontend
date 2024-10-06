@@ -47,7 +47,8 @@ jobs:
         run: |
           ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "\
           cd /home/projects/primetime-frontend-${{ steps.set-env.outputs.ENVIRONMENT_NAME }} && \
-          TAG_NAME=${{ steps.set-env.outputs.TAG_NAME }}
+          TAG_NAME=${{ steps.set-env.outputs.TAG_NAME }} && \
+          echo $TAG_NAME && \
           sh ./deploy.sh"
 
         env:
