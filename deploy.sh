@@ -13,5 +13,5 @@ docker builder prune -f
 npm ci
 npm run build
 
-BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose build --no-cache
+BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose build --no-cache -t primetme-frontend:latest
 BRANCH_NAME=main ENVIRONMENT_NAME=production PORT=3400 docker-compose up -d --build --force-recreate
