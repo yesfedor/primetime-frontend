@@ -2,7 +2,9 @@
 ENVIRONMENT_NAME=production
 BRANCH_NAME=main
 
-cd /home/projects/primetime-frontend-production
+cd /home/projects/primetime-frontend-${ENVIRONMENT_NAME}
+
+ls -a
 
 docker-compose down
 
@@ -10,12 +12,12 @@ git clean -fd
 git reset --hard
 git pull
 
-cp ./environments/production.env .env
-
-ls -a
+cp ./environments/${ENVIRONMENT_NAME}.env .env
 
 node -v
 nvm --help
+
+ls -a
 
 npm ci
 npm run build
