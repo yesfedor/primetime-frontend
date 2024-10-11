@@ -7,8 +7,6 @@ cd "/home/projects/primetime-frontend-${ENVIRONMENT_NAME}"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
-echo "Current PATH: $PATH"
-
 docker-compose down
 
 git clean -fd
@@ -17,11 +15,9 @@ git pull
 
 cp "./environments/${ENVIRONMENT_NAME}.env" .env
 
-echo "Current PATH: $PATH"
-
 npm ci
 npm run build
 
-# BRANCH_NAME=${BRANCH_NAME} ENVIRONMENT_NAME=${ENVIRONMENT_NAME} PORT=3400 docker-compose up -d --build --force-recreate
+BRANCH_NAME=${BRANCH_NAME} ENVIRONMENT_NAME=${ENVIRONMENT_NAME} PORT=3400 docker-compose up -d --build --force-recreate
 
 docker builder prune -f
