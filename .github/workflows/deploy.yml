@@ -45,7 +45,10 @@ jobs:
           git clean -fd
           git reset --hard
           git pull
-          sh ./deploy.sh
+          echo "Loading profile..."
+          . ~/.bashrc
+          set -ex
+          . ./deploy.sh
           EOT
 
         env:

@@ -2,8 +2,6 @@
 ENVIRONMENT_NAME=production
 BRANCH_NAME=main
 
-source ~/.bashrc
-
 cd "/home/projects/primetime-frontend-${ENVIRONMENT_NAME}"
 
 docker-compose down
