@@ -47,6 +47,7 @@ jobs:
           git pull
           echo "Loading profile..."
           . ~/.bashrc
+          echo "Current PATH: $PATH"
           set -ex
           . ./deploy.sh
           EOT
