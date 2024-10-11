@@ -42,12 +42,6 @@ jobs:
         run: |
           ssh -T ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} /bin/bash <<'EOT'
           cd /home/projects/primetime-frontend-${{ steps.set-env.outputs.ENVIRONMENT_NAME }}
-          git clean -fd
-          git reset --hard
-          git pull
-          echo "Loading profile..."
-          . ~/.bashrc
-          echo "Current PATH: $PATH"
           set -ex
           . ./deploy.sh
           EOT
