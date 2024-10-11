@@ -40,9 +40,14 @@ jobs:
 
       - name: Deploying
         run: |
-          ssh -t ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} "\
+          ssh -t ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_HOST }} /bin/bash "$( cat <<'EOT'
           cd /home/projects/primetime-frontend-${{ steps.set-env.outputs.ENVIRONMENT_NAME }} && \
-          sudo -u root sh ./deploy.sh"
+          git clean -fd && \
+          git reset --hard && \
+          git pull && \
+          sh ./deploy.sh"
+          EOT
+          )"
 
         env:
           PORT: ${{ steps.set-env.outputs.PORT }}
