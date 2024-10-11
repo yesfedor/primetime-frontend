@@ -17,6 +17,8 @@ git pull
 
 cp "./environments/${ENVIRONMENT_NAME}.env" .env
 
+echo "Current PATH: $PATH"
+
 npm ci
 npm run build
 
