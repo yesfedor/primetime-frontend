@@ -17,6 +17,6 @@ cp "./environments/${ENVIRONMENT_NAME}.env" .env
 npm ci
 npm run build
 
-BRANCH_NAME=${BRANCH_NAME} ENVIRONMENT_NAME=${ENVIRONMENT_NAME} PORT=3400 docker-compose up -d --build --force-recreate
+# BRANCH_NAME=${BRANCH_NAME} ENVIRONMENT_NAME=${ENVIRONMENT_NAME} PORT=3400 docker-compose up -d --build --force-recreate
 
 docker builder prune -f
