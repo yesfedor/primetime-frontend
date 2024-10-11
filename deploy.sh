@@ -4,6 +4,11 @@ BRANCH_NAME=main
 
 cd "/home/projects/primetime-frontend-${ENVIRONMENT_NAME}"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+echo "Current PATH: $PATH"
+
 docker-compose down
 
 git clean -fd
