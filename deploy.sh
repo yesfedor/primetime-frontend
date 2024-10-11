@@ -15,6 +15,7 @@ git pull
 
 cp "./environments/${ENVIRONMENT_NAME}.env" .env
 
+nvm use
 npm ci
 npm run build
 
