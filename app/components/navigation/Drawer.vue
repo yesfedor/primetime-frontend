@@ -121,7 +121,7 @@ export default defineComponent({
             //   click: emptyFn,
             // },
             {
-              icon: 'mdi-youtube-subscription',
+              icon: 'mdi-star',
               label: t('navigation.subscription'),
               to: { name: RouteNamesEnum.subscriptions },
               click: emptyFn,

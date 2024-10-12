@@ -34,7 +34,8 @@
           :key="item.id"
           v-bind="bindCardsSizes"
         >
-          <AppWatchCardDefault :item="item" />
+          <AppWatchCardStaff v-if="item?._type === 'staff'" :item="item" />
+          <AppWatchCardDefault v-else :item="item" />
         </v-col>
       </template>
     </template>
@@ -43,6 +44,7 @@
 
 <script lang="ts" setup>
 import type { WatchApiContentItem } from '@/api/watch'
+import AppWatchCardStaff from '@/components/watch/card/Staff.vue'
 import AppWatchCardDefault from '@/components/watch/card/Default.vue'
 // @ts-expect-error typescript error
 import { computed, defineProps, toRefs } from 'vue'

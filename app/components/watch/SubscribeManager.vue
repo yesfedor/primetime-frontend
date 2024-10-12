@@ -48,7 +48,7 @@ const managerStatusIcon = computed(() => {
   if (showText.value) {
     return undefined
   }
-  return isSubscribe.value ? 'mdi-heart' : 'mdi-heart-outline'
+  return isSubscribe.value ? 'mdi-star' : 'mdi-star-outline'
 })
 
 const authProvider = useAuth()
