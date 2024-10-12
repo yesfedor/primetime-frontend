@@ -13,11 +13,13 @@
       class="align-end"
     >
       <v-card-title class="d-flex align-center text-white text-body-2">
-        <span class="text-capitalize">{{ $t(`watch.type.${item.type}`) }}</span>
-        <span class="px-2"> ● </span>
-        <span>{{ item.year }}</span>
-        <template v-if="item.ratingKinopoisk && item.ratingKinopoisk !== 'null' && item.ratingKinopoisk !== '0.0'">
+        <template v-if="item.type">
+          <span class="text-capitalize">{{ item.type && $t(`watch.type.${item.type}`) }}</span>
           <span class="px-2"> ● </span>
+        </template>
+        <span v-if="item.year">{{ item.year }}</span>
+        <template v-if="item.ratingKinopoisk && item.ratingKinopoisk !== 'null' && item.ratingKinopoisk !== '0.0'">
+          <span v-if="item.type || item.year" class="px-2"> ● </span>
           <div class="d-inline-flex align-center">
             <v-icon
               icon="mdi-star"
