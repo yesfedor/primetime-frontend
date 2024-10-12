@@ -64,21 +64,21 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    defaultLocale: 'ru',
+    defaultLocale: 'ru-RU',
     detectBrowserLanguage: {
       cookieKey: 'i18n_redirected',
       redirectOn: 'root',
-      useCookie: true,
+      useCookie: false,
     },
     langDir: 'locales',
     lazy: true,
     locales: [
       {
-        code: 'ru',
+        code: 'ru-RU',
         file: 'ru.ts',
       },
       {
-        code: 'en',
+        code: 'en-US',
         file: 'en.ts',
       },
     ],

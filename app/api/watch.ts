@@ -21,13 +21,22 @@ export enum WatchContentTypeEnum {
 
 type WatchContentType = 'FILM' | 'VIDEO' | 'TV_SERIES' | 'MINI_SERIES' | 'TV_SHOW'
 
-export interface WatchApiFastSearchItem {
-  kinopoiskId: string
-  nameRu: string
+export type WatchApiFastSearchItem = {
+  _type: 'watch'
+  kinopoiskId: number
+  nameRu: any
+  type: WatchContentType
+  year: string
   posterUrl: string
   ratingKinopoisk: string
-  type: WatchContentType,
-  year: string
+} | {
+  _type: 'staff'
+  kinopoiskId: number
+  webUrl: string
+  nameRu: string
+  nameEn: string
+  sex: 'FEMALE' | 'MALE'
+  posterUrl: string
 }
 
 export interface WatchApiExpandedItem {

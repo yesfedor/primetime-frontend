@@ -6,7 +6,7 @@ export const WATCH_CARDS_SIZES = {
 }
 
 // TODO: backend(transform to admin page?)
-export const WATCH_TRANDS_TABS = [
+export const WATCH_TRANDS_TABS: { labelKey: string, act: string }[] = [
   {
     labelKey: 'all',
     act: '',
@@ -19,4 +19,4 @@ export const WATCH_TRANDS_TABS = [
     labelKey: 'tv_series',
     act: 'TV_SERIES',
   },
-]
+] as const

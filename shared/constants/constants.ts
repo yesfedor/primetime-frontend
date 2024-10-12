@@ -25,7 +25,7 @@ export const RouteNamesEnum = {
   staff: 'staff-staff',
 
   // search
-  search: 'search',
+  search: 'search-search',
   searchFilter: 'filter',
 
   // admin

@@ -21,21 +21,21 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
-import { useTitle } from '@vueuse/core'
-import { watchApi } from '@/api/watch'
 import type { WatchApiContentItem } from '@/api/watch'
-import { useWatchList } from '@/composables/useWatchList'
+import { watchApi } from '@/api/watch'
 import AppWatchList from '@/components/watch/List.vue'
 import AppWatchParallax from '@/components/watch/Parallax.vue'
+import { useWatchList } from '@/composables/useWatchList'
+import { useTitle } from '@vueuse/core'
+import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 useTitle(t('trands.title'))
 
 const selectedTab = ref(WATCH_TRANDS_TABS[0].act)
 
-const { refreshList, cardFirstItem, cardList, isLoading } = useWatchList<WatchApiContentItem>({
+const { refreshList, cardFirstItem, cardList, isLoading } = await useWatchList<WatchApiContentItem>({
   async loadFn() {
     const result = await watchApi.getTrands(selectedTab.value)
     if (result?.total) {
@@ -45,7 +45,7 @@ const { refreshList, cardFirstItem, cardList, isLoading } = useWatchList<WatchAp
   },
 })
 
-const onChangeTab = (value: unknown) => {
+function onChangeTab(value: unknown) {
   selectedTab.value = String(value)
   refreshList()
 }
