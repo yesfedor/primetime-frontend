@@ -108,18 +108,18 @@ export default defineComponent({
               to: { name: RouteNamesEnum.navigatorTrand },
               click: emptyFn,
             },
-            {
-              icon: 'mdi-compass',
-              label: t('navigation.searchFilter'),
-              to: { name: RouteNamesEnum.searchFilter },
-              click: emptyFn,
-            },
-            {
-              icon: 'mdi-new-box',
-              label: t('navigation.feed'),
-              to: { name: RouteNamesEnum.feed },
-              click: emptyFn,
-            },
+            // {
+            //   icon: 'mdi-compass',
+            //   label: t('navigation.searchFilter'),
+            //   to: { name: RouteNamesEnum.searchFilter },
+            //   click: emptyFn,
+            // },
+            // {
+            //   icon: 'mdi-new-box',
+            //   label: t('navigation.feed'),
+            //   to: { name: RouteNamesEnum.feed },
+            //   click: emptyFn,
+            // },
             {
               icon: 'mdi-youtube-subscription',
               label: t('navigation.subscription'),

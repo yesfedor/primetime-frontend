@@ -5,7 +5,7 @@
     class="app-watch-card"
   >
     <v-img
-      :src="item.posterUrl"
+      :src="item.posterUrl || getPosterImageByKinopoiskid(item.kinopoiskId)"
       :height="height"
       scale="0.8"
       gradient="0deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.15) 100%"
@@ -29,7 +29,7 @@
       </v-card-title>
     </v-img>
     <v-list class="py-1">
-      <v-list-item :prepend-avatar="item.posterUrl">
+      <v-list-item :prepend-avatar="item.posterUrl || getPosterImageByKinopoiskid(item.kinopoiskId)">
         <v-list-item-title class="text-body-2">{{ item.nameRu }}</v-list-item-title>
         <template #append>
           <AppWatchActions :item="item" />

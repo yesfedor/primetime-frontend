@@ -84,34 +84,53 @@
             key="no_result"
             :title="$t('search.autocomplete.no_result')"
           />
-          <v-list-item
+          <template
             v-for="(hint, index) in hints"
             :key="hint.kinopoiskId"
             :tabindex="index + 1"
-            :prepend-avatar="getPosterImageByKinopoiskid(hint.kinopoiskId)"
-            :to="getRouteToWatchPage(hint.kinopoiskId)"
-            link
-            :class="{ 'd-none': !hint.nameRu || !hint.posterUrl }"
-            class="text-truncate"
-            @click="menu = false"
           >
-            <v-list-item-title>{{ hint.nameRu }}</v-list-item-title>
-            <v-list-item-subtitle class="d-flex align-center">
-              <span>{{ $t(`watch.type.${hint.type}`) }}</span>
-              <span class="px-2"> - </span>
-              <span>{{ hint.year }}</span>
-              <template v-if="hint.ratingKinopoisk !== 'null'">
+            <v-list-item
+              v-if="hint._type === 'watch'"
+              :to="getRouteToWatchPage(hint.kinopoiskId)"
+              :prepend-avatar="getPosterImageByKinopoiskid(hint.kinopoiskId)"
+              :class="{ 'd-none': !hint.nameRu }"
+              class="text-truncate"
+              link
+              @click="menu = false"
+            >
+              <v-list-item-title>{{ hint.nameRu }}</v-list-item-title>
+              <v-list-item-subtitle class="d-flex align-center">
+                <span>{{ $t(`watch.type.${hint.type}`) }}</span>
                 <span class="px-2"> - </span>
-                <span class="d-flex align-center">
-                  <v-icon
-                    icon="mdi-star"
-                    size="16"
-                    class="pe-2"
-                  /> {{ hint.ratingKinopoisk }}
-                </span>
-              </template>
-            </v-list-item-subtitle>
-          </v-list-item>
+                <span>{{ hint.year }}</span>
+                <template v-if="hint.ratingKinopoisk !== 'null'">
+                  <span class="px-2"> - </span>
+                  <span class="d-flex align-center">
+                    <v-icon
+                      icon="mdi-star"
+                      size="16"
+                      class="pe-2"
+                    />
+                    <span>{{ hint.ratingKinopoisk }}</span>
+                  </span>
+                </template>
+              </v-list-item-subtitle>
+            </v-list-item>
+            <v-list-item
+              v-else-if="hint._type === 'staff'"
+              :to="getRouteToStaffPage(hint.kinopoiskId)"
+              :prepend-avatar="hint.posterUrl"
+              :class="{ 'd-none': !hint.nameRu || !hint.posterUrl }"
+              class="text-truncate"
+              link
+              @click="menu = false"
+            >
+              <v-list-item-title>{{ hint.nameRu }}</v-list-item-title>
+              <v-list-item-subtitle class="d-flex align-center">
+                {{ hint.sex === 'FEMALE' ? $t('staff.hint.sex.FEMALE') : $t('staff.hint.sex.MALE') }}
+              </v-list-item-subtitle>
+            </v-list-item>
+          </template>
         </v-list>
       </v-list-item>
     </v-list>
@@ -124,7 +143,7 @@ import { watchApi } from '@/api/watch'
 import { watchDebounced } from '@vueuse/core'
 import { computed, onMounted, ref, watch } from 'vue'
 
-const rotuer = useRouter()
+const router = useRouter()
 
 const menu = ref(false)
 
@@ -230,7 +249,19 @@ watch(authProvider.user, (user) => {
   }
 })
 
-function getRouteToWatchPage(kinopoiskId: string) {
+function getRouteToStaffPage(kinopoiskId: number) {
+  return {
+    name: RouteNamesEnum.staff,
+    params: {
+      staff: kinopoiskId,
+    },
+    query: {
+      [UTM_SOURCE_KEY]: UTM_SOURCE.searchhint,
+    },
+  }
+}
+
+function getRouteToWatchPage(kinopoiskId: number) {
   return {
     name: RouteNamesEnum.watch,
     params: {

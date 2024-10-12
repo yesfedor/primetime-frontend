@@ -28,7 +28,7 @@ useTitle(t('history.title'))
 
 const authProvider = useAuth()
 
-const { cardFirstItem, cardList, isLoading } = useWatchList<WatchApiContentItem>({
+const { cardFirstItem, cardList, isLoading } = await useWatchList<WatchApiContentItem>({
   async loadFn() {
     const result = await watchApi.getUserHistory(authProvider.getJwt(), await authProvider.getClientId())
     if (result?.total) {

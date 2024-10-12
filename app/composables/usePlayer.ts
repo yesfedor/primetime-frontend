@@ -1,19 +1,22 @@
 import type { Ref } from 'vue'
-import { computed, ref } from 'vue'
+import { computed } from 'vue'
 
 const API_CONFIG = {
   host: 'primetime.su',
 }
 
 export enum PlayerAlias {
+  mediafilm = 'mediafilm',
   svetacdn = 'svetacdn',
-  voidboost = 'voidboost',
   cdnmovies = 'cdnmovies',
+  tobaco = 'tobaco',
+  voidboost = 'voidboost',
+  gencit = 'gencit',
 }
 
 type PlayerAliasStrings = keyof typeof PlayerAlias
 
-const playerAliasDefault = PlayerAlias.svetacdn
+const playerAliasDefault = PlayerAlias.mediafilm
 const playerAlias = useCookie<PlayerAliasStrings>('player-alias', {
   default() {
     return playerAliasDefault as PlayerAliasStrings
@@ -28,12 +31,18 @@ export function usePlayer(kinopoiskId: Ref<string> | null) {
       return ''
     }
     switch (playerAlias.value) {
+      case PlayerAlias.mediafilm:
+        return `//player.mediafilm.in/LDSZJq4uCNvY?kp_id=${kinopoiskId.value}&domain=${API_CONFIG.host}`
       case PlayerAlias.svetacdn:
         return `//player.svetacdn.in/LDSZJq4uCNvY?kp_id=${kinopoiskId.value}&domain=${API_CONFIG.host}`
-      case PlayerAlias.voidboost:
-        return `//voidboost.tv/embed/${kinopoiskId.value}`
       case PlayerAlias.cdnmovies:
         return `https://ugly-turkey.cdnmovies-stream.online/kinopoisk/${kinopoiskId.value}/iframe`
+      case PlayerAlias.tobaco:
+        return `https://api.tobaco.ws/embed/kp/${kinopoiskId.value}`
+      case PlayerAlias.voidboost:
+        return `//voidboost.tv/embed/${kinopoiskId.value}`
+      case PlayerAlias.gencit:
+        return `https://gencit.info/aim/${kinopoiskId.value}`
       default:
         return `//player.svetacdn.in/LDSZJq4uCNvY?kp_id=${kinopoiskId.value}&domain=${API_CONFIG.host}`
     }

@@ -9,8 +9,8 @@ export default defineI18nLocale(() => {
       },
       locales: {
         label: 'Язык',
-        en: 'English',
-        ru: 'Русский',
+        enUS: 'English',
+        ruRU: 'Русский',
       },
       loading: 'Загрузка..',
       no_result: 'Ничего не нашли',
@@ -52,6 +52,14 @@ export default defineI18nLocale(() => {
       feed: 'Новые серии',
       subscription: 'Подписки',
       history: 'История',
+    },
+    staff: {
+      hint: {
+        sex: {
+          FEMALE: 'Актриса',
+          MALE: 'Актер',
+        },
+      },
     },
     search: {
       title: 'Поищите что-нибудь',

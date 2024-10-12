@@ -25,14 +25,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
 import { useTitle } from '@vueuse/core'
-import { watchApi } from '@/api/watch'
-import type { WatchApiContentItem } from '@/api/watch'
-import { useWatchList } from '@/composables/useWatchList'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import AppWatchList from '@/components/watch/List.vue'
-import AppWatchParallax from '@/components/watch/Parallax.vue'
+import type { WatchApiContentItem } from '~/api/watch'
+import { watchApi } from '~/api/watch'
+import AppWatchList from '~/components/watch/List.vue'
+import AppWatchParallax from '~/components/watch/Parallax.vue'
+import { useWatchList } from '~/composables/useWatchList'
 
 const i18n = useI18n()
 useTitle(i18n.t('search.title'))
@@ -43,7 +43,7 @@ const loadingSearch = ref(false)
 const searchField = ref('')
 const lastSearchPhrase = ref('')
 
-const { refreshList, cardFirstItem, cardList, isLoading } = useWatchList<WatchApiContentItem>({
+const { refreshList, cardFirstItem, cardList, isLoading } = await useWatchList<WatchApiContentItem>({
   async loadFn() {
     lastSearchPhrase.value = searchField.value
     const result = await watchApi.fastSearch(searchField.value, authProvider.getJwt(), await authProvider.getClientId())

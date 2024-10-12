@@ -5,6 +5,9 @@ export default defineNuxtRouteMiddleware((to) => {
       params: {
         kpid: to.params.kpid,
       },
+      query: {
+        [UTM_SOURCE_KEY]: UTM_SOURCE.watchbox,
+      },
     })
   }
 })
