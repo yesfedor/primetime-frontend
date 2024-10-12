@@ -9,7 +9,7 @@
       />
     </template>
     <v-list
-      width="320"
+      width="260"
       bg-color="secondary"
       class="me-lg-1"
     >
@@ -58,7 +58,7 @@ const sharingInfo = [
     payload: sharingType.vk,
   },
   {
-    icon: 'fa:fab fa-telegram',
+    icon: 'fa:fab fa-telegram-plane',
     payload: sharingType.telegram,
   },
   // {
@@ -66,7 +66,7 @@ const sharingInfo = [
   // 	payload: sharingType.twitter,
   // },
   {
-    icon: 'fa:fas fa-link',
+    icon: 'mdi-share',
     payload: sharingType.link,
   },
 ]

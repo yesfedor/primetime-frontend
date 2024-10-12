@@ -1,12 +1,29 @@
 <template>
-  <v-container :key="resolveRouterParam" fluid class="app-watch">
+  <v-container
+    :key="resolveRouterParam"
+    fluid
+    class="app-watch"
+  >
     <v-row>
-      <v-col cols="12" md="12" lg="9">
+      <v-col
+        cols="12"
+        md="12"
+        lg="9"
+      >
         <v-row class="app-watch-primary">
-          <v-col cols="12" class="app-watch-primary__player">
-            <AppWatchPlayer :kinopoisk-id="kpid" :is-loading="watchIsLoading" />
+          <v-col
+            cols="12"
+            class="app-watch-primary__player"
+          >
+            <AppWatchPlayer
+              :kinopoisk-id="kpid"
+              :is-loading="watchIsLoading"
+            />
           </v-col>
-          <v-col cols="12" class="app-watch-primary__info-table">
+          <v-col
+            cols="12"
+            class="app-watch-primary__info-table"
+          >
             <AppWatchInfoTable
               :data="watchData"
               :staff="staff"
@@ -17,9 +34,16 @@
           </v-col>
         </v-row>
       </v-col>
-      <v-col cols="12" md="12" lg="3">
+      <v-col
+        cols="12"
+        md="12"
+        lg="3"
+      >
         <v-row class="app-watch-secondary">
-          <v-col cols="12" class="app-watch-secondary__recommendations">
+          <v-col
+            cols="12"
+            class="app-watch-secondary__recommendations"
+          >
             <h2 class="text-h6 mb-3">Далее к просмотру</h2>
             <AppWatchList
               :list="recommendationsData"
@@ -66,7 +90,7 @@ const authProvider = useAuth()
 const watchData = ref<WatchApiExpandedItem | { [key: string]: string }>({})
 const watchIsLoading = ref(false)
 
-const resolveRouterParam = computed(() => route.params.kpid + '')
+const resolveRouterParam = computed(() => `${route.params.kpid}`)
 const kpid = computed(() => {
   if (watchData.value?.kinopoiskId) {
     return watchData.value.kinopoiskId
@@ -74,7 +98,7 @@ const kpid = computed(() => {
   return '0'
 })
 
-const getWatchDataBySlug = async () => {
+async function getWatchDataBySlug() {
   watchIsLoading.value = true
   const result = await watchApi.getDataBySlug(resolveRouterParam.value, authProvider.getJwt())
   if (result?.id) {
@@ -88,7 +112,7 @@ const getWatchDataBySlug = async () => {
   watchIsLoading.value = false
 }
 
-const getWatchDataByKpid = async () => {
+async function getWatchDataByKpid() {
   watchIsLoading.value = true
   const result = await watchApi.getDataByKpid(resolveRouterParam.value, authProvider.getJwt())
   if (result?.id) {
@@ -112,7 +136,7 @@ const recommendationsCardSizes = {
   lg: 12,
   xl: 12,
 }
-const getRecommendationsData = async () => {
+async function getRecommendationsData() {
   recommendationsDataIsLoading.value = true
   const result = await watchApi.getRecommendationsDataByKpid(kpid.value)
   if (result?.total) {
@@ -124,7 +148,7 @@ const getRecommendationsData = async () => {
 // staff
 const staff = ref<WatchApiGetStaffByKpid['staff'] | null>(null)
 const staffLoading = ref(false)
-const getStaff = async () => {
+async function getStaff() {
   staffLoading.value = true
   const staffData = await watchApi.getStaffByKpid(kpid.value)
   if (staffData?.staff) {
@@ -136,7 +160,7 @@ const getStaff = async () => {
 // facts
 const facts = ref<WatchApiGetFacts['content'] | null>(null)
 const factsLoading = ref(false)
-const getFacts = async () => {
+async function getFacts() {
   factsLoading.value = true
   const factsData = await watchApi.getFacts(kpid.value)
   if (factsData?.content.length) {
@@ -149,7 +173,7 @@ const getFacts = async () => {
 const reviews = ref<WatchApiGetReviews['items'] | null>(null)
 const reviewsLoading = ref(false)
 
-const getReviews = async () => {
+async function getReviews() {
   reviewsLoading.value = true
   const reviewsData = await watchApi.getReviews(kpid.value)
   if (reviewsData?.items) {
@@ -163,10 +187,11 @@ function reset() {
   recommendationsData.value = []
 }
 
-const init = async () => {
+async function init() {
   if (resolveRouterParam.value.includes('-')) {
     await getWatchDataBySlug()
-  } else {
+  }
+  else {
     await getWatchDataByKpid()
   }
   await getRecommendationsData()

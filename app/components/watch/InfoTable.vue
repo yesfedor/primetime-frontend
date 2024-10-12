@@ -11,7 +11,7 @@
         class="bg-background"
       >
         <h1 class="text-h6">
-          <span class="text-truncate text-capitalize">{{ $t(`watch.type.${data.type}`) }}&#160;</span>
+          <span v-if="data.type" class="text-truncate text-capitalize">{{ $t(`watch.type.${data.type}`) }}&#160;</span>
           <span>{{ data.nameRu || data.nameEn }}</span>
         </h1>
       </v-skeleton-loader>
@@ -38,7 +38,6 @@
           <AppWatchSelectPlayer />
           <AppWatchSubscribeManager
             :kinopoisk-id="kinopoiskId"
-            show-text
           />
         </v-card-actions>
       </v-card>

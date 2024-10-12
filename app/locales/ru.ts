@@ -50,7 +50,7 @@ export default defineI18nLocale(() => {
       trand: 'В тренде',
       searchFilter: 'Навигатор',
       feed: 'Новые серии',
-      subscription: 'Подписки',
+      subscription: 'Избранное',
       history: 'История',
     },
     staff: {
@@ -70,7 +70,7 @@ export default defineI18nLocale(() => {
       },
     },
     subscriptions: {
-      title: 'Мои подписки',
+      title: 'Избранное',
       manager: {
         action: {
           subscribe: 'Подписаться',

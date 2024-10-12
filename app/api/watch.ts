@@ -83,6 +83,7 @@ export interface WatchApiFastSearchHistory {
 }
 
 export interface WatchApiContentItem extends WatchApiFastSearchItem {
+  _type: 'staff' | 'watch'
   id: string
   slug?: string
   ratingAgeLimits: string
@@ -190,12 +191,12 @@ export interface WatchApiItemsByStaff {
 }
 
 export const watchApi = {
-  async fastSearch(query: string, jwt: string, clientId: string) {
+  async fastSearch(query: string, jwt: string, clientId: string, staffLimit = 4) {
     try {
       if (!query.length) {
         return createError(null)
       }
-      const result = await axios.get(API_PATH_METHOD + `watch.fastSearch?v=1.0&query=${query}&jwt=${jwt}&client_id=${clientId}`)
+      const result = await axios.get(API_PATH_METHOD + `watch.fastSearch?v=1.0&query=${query}&jwt=${jwt}&client_id=${clientId}&staff-limit=${staffLimit}`)
       if (result?.data.code === 200 && result.data.total) {
         return result.data as WatchApiFastSearch
       }
