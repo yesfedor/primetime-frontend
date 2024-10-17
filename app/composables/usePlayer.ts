@@ -23,6 +23,7 @@ const playerAlias = useCookie<PlayerAliasStrings>('player-alias', {
   },
   path: '/',
   maxAge: 30 * 24 * 60 * 60 * 1000,
+  domain: import.meta.NUXT_COOKIE_DOMAIN,
 })
 
 export function usePlayer(kinopoiskId: Ref<string> | null) {

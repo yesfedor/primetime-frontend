@@ -40,12 +40,13 @@ export enum IUserResponceBlocking {
 export function createAuthService() {
   const API_PATH_METHOD = 'https://primetime.su/api/method/'
 
-  const clientIdCookie = useCookie<string | null>('client_id', {
+  const clientIdCookie = useCookie<string | null>('device_id', {
     default() {
       return null
     },
     path: '/',
     maxAge: 30 * 24 * 60 * 60 * 1000,
+    domain: import.meta.NUXT_COOKIE_DOMAIN,
   })
   const jwtCookie = useCookie<string | null>('atoken', {
     default() {
@@ -53,6 +54,7 @@ export function createAuthService() {
     },
     path: '/',
     maxAge: 30 * 24 * 60 * 60 * 1000,
+    domain: import.meta.NUXT_COOKIE_DOMAIN,
   })
   const fastLoginCookie = useCookie<string | null>('fastLogin', {
     default() {
@@ -60,6 +62,7 @@ export function createAuthService() {
     },
     path: '/',
     maxAge: 30 * 24 * 60 * 60 * 1000,
+    domain: import.meta.NUXT_COOKIE_DOMAIN,
   })
 
   const isLogger = true
