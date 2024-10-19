@@ -111,6 +111,10 @@ export function createAuthService() {
   const deviceTest = useInyDeviceTest()
 
   function useInyDevice() {
+    if (import.meta.server) {
+      return deviceObject.undefined
+    }
+
     const platform = navigator.userAgent
     for (const index in deviceTest) {
       if (deviceTest[index]?.platform.test(platform)) {

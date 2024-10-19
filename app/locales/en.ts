@@ -72,7 +72,8 @@ export default defineI18nLocale(() => {
     },
     home: {
       seo_title: 'PrimeTime - онлайн-кинотеатр',
-      title: 'Homepage',
+      title: 'PrimeTime - online-cinema',
+      subtitle: 'Enjoy your viewing',
     },
     watch: {
       share: {
