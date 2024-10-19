@@ -368,4 +368,14 @@ export const watchApi = {
       return createError(e)
     }
   },
+  async suggestionGetByUser(jwt?: string) {
+    try {
+      const result = await axios.get(API_PATH_METHOD + `suggestion.getByUser?v=1.0&jwt=${jwt}`)
+      if (result.data?.total) {
+        return result.data as WatchApiGetTrands
+      }
+    } catch (e) {
+      return createError(e)
+    }
+  },
 }

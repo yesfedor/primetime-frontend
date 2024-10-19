@@ -43,9 +43,11 @@ export async function useWatchList<ITEM>(props: WatchListProps<ITEM>) {
 
   const router = useRouter()
 
-  await useAsyncData(`watch-list:${router.currentRoute.value.name as string}`, async () => {
+  const { data } = await useAsyncData(`watch-list:${router.currentRoute.value.name as string}`, async () => {
     return await loadList()
   }, { lazy: true })
+
+  cardList.value = data
 
   return {
     refreshList,
