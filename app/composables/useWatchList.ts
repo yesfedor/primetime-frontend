@@ -52,8 +52,8 @@ export async function useWatchList<ITEM>(props: WatchListProps<ITEM>) {
     return await loadList()
   }, { lazy: true })
 
-  if (Array.isArray(data)) {
-    cardList.value = data
+  if (Array.isArray(data.value)) {
+    cardList.value = data.value
   }
 
   return {
