@@ -8,7 +8,9 @@ import AppNavigationDrawer from '~/components/navigation/Drawer.vue'
   <layout-provider>
     <v-app>
       <AppHeader />
+
       <AppNavigationDrawer />
+
       <v-main>
         <slot />
       </v-main>

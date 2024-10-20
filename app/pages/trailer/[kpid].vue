@@ -5,6 +5,7 @@
     fullscreen
     absolute
     content-class="app-trailer-page"
+    persistent
   >
     <v-container fluid class="fill-height bg-black app-trailer-page__wrapper wrapper px-5">
       <v-row v-if="!isShowError && trailerData">
@@ -72,6 +73,7 @@ const loadTrailerData = async () => {
     trailerData.value = result
   }
   trailerIsLoading.value = false
+  return result
 }
 
 const isShowError = computed(() => trailerIsLoading.value || !trailerData.value)
@@ -111,7 +113,9 @@ watch(popupIsOpen, (popupState) => {
   }
 })
 
-onMounted(() => loadTrailerData())
+await useAsyncData('trailer-data', async () => {
+  return await loadTrailerData()
+})
 </script>
 
 <style lang="scss">
