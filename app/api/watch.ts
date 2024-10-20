@@ -172,9 +172,19 @@ export interface WatchApiGetStaffByKpid {
 }
 
 export interface WatchApiGAdminViewed {
-  user: IUserResponceData,
-  trailer: WatchApiExpandedItem,
-  time: string | number,
+  id: string
+  slug: string
+  kinopoiskId: string
+  nameRu: string
+  ratingAgeLimits: string
+  ratingKinopoisk: string
+  posterUrl: string
+  type: string
+  year: string
+  user_uid: string
+  user_name: string
+  user_surname: string
+  watch_time: string
 }
 
 export interface WatchApiItemsByStaffItem {
@@ -361,8 +371,8 @@ export const watchApi = {
   async adminViewed(jwt: string) {
     try {
       const result = await axios.get(API_PATH_METHOD + `watch.adminViewed?v=1.0&jwt=${jwt}`)
-      if (result.data?.length) {
-        return result.data as WatchApiGAdminViewed[]
+      if (result.data.content) {
+        return result.data.content as WatchApiGAdminViewed[]
       }
     } catch (e) {
       return createError(e)
