@@ -55,6 +55,7 @@ export default defineI18nLocale(() => {
     },
     search: {
       title: 'Look for something',
+      mini: 'Find',
       autocomplete: {
         empty: 'Look for something else',
         no_result: 'Nothing found',

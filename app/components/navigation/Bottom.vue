@@ -45,11 +45,11 @@ export default defineComponent({
         label: t('navigation.trand'),
         to: { name: RouteNamesEnum.navigatorTrand },
       },
-      // {
-      //   icon: 'mdi-compass',
-      //   label: t('navigation.searchFilter'),
-      //   to: { name: RouteNamesEnum.searchFilter },
-      // },
+      {
+        icon: 'mdi-compass',
+        label: t('navigation.searchFilter'),
+        to: { name: RouteNamesEnum.searchFilter },
+      },
       // {
       //   icon: 'mdi-new-box',
       //   label: t('navigation.feed'),

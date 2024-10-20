@@ -63,6 +63,7 @@ export default defineI18nLocale(() => {
     },
     search: {
       title: 'Поищите что-нибудь',
+      mini: 'Найти',
       autocomplete: {
         empty: 'Поищите что-нибудь ещё',
         no_result: 'Ничего не нашли',

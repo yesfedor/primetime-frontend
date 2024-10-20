@@ -1,6 +1,7 @@
 import type { Ref } from 'vue'
 
 interface WatchListProps<ITEM> {
+  uuid?: string
   loadFn: () => Promise<ITEM[]>
   before?: () => void
   after?: () => void
@@ -8,8 +9,9 @@ interface WatchListProps<ITEM> {
 }
 
 export async function useWatchList<ITEM>(props: WatchListProps<ITEM>) {
-  const cardList = ref<ITEM[]>([]) as Ref<ITEM[]>
+  const cardList = ref<ITEM[]>([])
   const isLoading = ref(false)
+  const isEmpty = computed(() => cardList.value.length)
 
   const cardFirstItem = computed(() => {
     if (!cardList.value.length) {
@@ -26,6 +28,8 @@ export async function useWatchList<ITEM>(props: WatchListProps<ITEM>) {
       const result = await props.loadFn()
       if (result.length) {
         cardList.value = result
+      } else {
+        cardList.value = []
       }
       typeof props.after === 'function' && props.after()
     }
@@ -43,16 +47,20 @@ export async function useWatchList<ITEM>(props: WatchListProps<ITEM>) {
 
   const router = useRouter()
 
-  const { data } = await useAsyncData(`watch-list:${router.currentRoute.value.name as string}`, async () => {
+  const uuid = props.uuid ? props.uuid : `watch-list:${router.currentRoute.value.name as string}`
+  const { data } = await useAsyncData(uuid, async () => {
     return await loadList()
   }, { lazy: true })
 
-  cardList.value = data
+  if (Array.isArray(data)) {
+    cardList.value = data
+  }
 
   return {
     refreshList,
     cardFirstItem,
     cardList,
     isLoading,
+    isEmpty,
   }
 }
