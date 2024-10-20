@@ -37,6 +37,7 @@ useTitle(i18n.t('home.seo_title'))
 const authProvider = useAuth()
 
 const { cardFirstItem, cardList, isLoading } = await useWatchList<WatchApiContentItem>({
+  uuid: 'home-suggestion-list',
   async loadFn() {
     const result = await watchApi.suggestionGetByUser(authProvider.getJwt())
     if (result?.total) {

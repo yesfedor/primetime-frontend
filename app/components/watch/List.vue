@@ -15,19 +15,20 @@
       />
     </v-col>
     <template v-else>
-      <v-col
-        v-if="isLoading && useSkeleton"
-        v-bind="bindCardsSizes"
-      >
-        <v-skeleton-loader
+      <template v-if="isLoading && useSkeleton">
+        <v-col
           v-for="id in '12345678'"
           :key="id"
-          :loading="isLoading"
-          type="card-avatar"
-          boilerplate
-          class="mb-5"
-        />
-      </v-col>
+          v-bind="bindCardsSizes"
+        >
+          <v-skeleton-loader
+            :loading="isLoading"
+            type="card-avatar"
+            boilerplate
+            class="mb-5"
+          />
+        </v-col>
+      </template>
       <template v-else>
         <v-col
           v-for="item in list"

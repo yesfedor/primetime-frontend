@@ -13,8 +13,23 @@ export default defineNuxtPlugin({
   name: 'ui:vuetify',
 
   async setup(nuxtApp) {
+    const device = useDevice()
+    let clientWidth = 360
+    let clientHeight = 600
+    if (device.isTablet) {
+      clientWidth = 992
+      clientHeight = 1000
+    }
+    if (device.isDesktop) {
+      clientWidth = 1920
+      clientHeight = 1080
+    }
+
     const vuetify = createVuetify({
-      ssr: true,
+      ssr: {
+        clientWidth,
+        clientHeight,
+      },
       blueprint: md3,
       display: {
         mobileBreakpoint: 'sm',

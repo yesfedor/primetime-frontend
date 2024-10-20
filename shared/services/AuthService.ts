@@ -65,6 +65,8 @@ export function createAuthService() {
     domain: import.meta.NUXT_COOKIE_DOMAIN,
   })
 
+  const pluginDevice = useDevice()
+
   const isLogger = true
 
   type loggerType = 'warn' | 'log' | 'error' | 'info'
@@ -111,11 +113,7 @@ export function createAuthService() {
   const deviceTest = useInyDeviceTest()
 
   function useInyDevice() {
-    if (import.meta.server) {
-      return deviceObject.undefined
-    }
-
-    const platform = navigator.userAgent
+    const platform = pluginDevice.userAgent
     for (const index in deviceTest) {
       if (deviceTest[index]?.platform.test(platform)) {
         return deviceTest[index]?.device

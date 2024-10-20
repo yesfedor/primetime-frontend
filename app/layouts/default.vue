@@ -7,17 +7,15 @@ import AppNavigationDrawer from '~/components/navigation/Drawer.vue'
 <template>
   <layout-provider>
     <v-app>
-      <client-only>
-        <AppHeader />
-        <AppNavigationDrawer />
-      </client-only>
+      <AppHeader />
+
+      <AppNavigationDrawer />
+
       <v-main>
         <slot />
       </v-main>
 
-      <client-only>
-        <AppNavigationBottom />
-      </client-only>
+      <AppNavigationBottom />
     </v-app>
   </layout-provider>
 </template>
