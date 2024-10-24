@@ -50,6 +50,10 @@ export default <Partial<NuxtOptions['app']['head']>>{
       name: 'theme-color',
       content: '#121212',
     },
+    {
+      name: 'yandex-verification',
+      content: '2ae7d132d6ef0042',
+    },
   ],
   link: [
     {
