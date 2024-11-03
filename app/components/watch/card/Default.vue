@@ -55,13 +55,19 @@ const { item } = toRefs(props)
 
 const { height } = useWatchHeight()
 
-const toWatchPage = {
-  name: RouteNamesEnum.watch,
-  params: {
-    kpid: item.value?.slug || item.value.kinopoiskId,
-  },
-  query: {
-    [UTM_SOURCE_KEY]: UTM_SOURCE.watchcard,
-  },
-}
+const authProvider = useAuth()
+
+const toWatchPage = computed(() => {
+  const kpid = authProvider.user.isAuth ? (item.value?.slug || item.value.kinopoiskId) : item.value.kinopoiskId
+
+  return {
+    name: authProvider.user.isAuth ? RouteNamesEnum.watch : RouteNamesEnum.trailer,
+    params: {
+      kpid,
+    },
+    query: {
+      [UTM_SOURCE_KEY]: UTM_SOURCE.watchcard,
+    },
+  }
+})
 </script>

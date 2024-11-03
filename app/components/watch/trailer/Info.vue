@@ -1,21 +1,5 @@
 <template>
   <div class="d-flex flex-column mt-2 app-trailer-info">
-    <div
-      v-if="Number(item.ratingKinopoisk)"
-      class="d-flex align-center justify-start"
-    >
-      <div
-        :aria-label="$t('trailer.info.rating')"
-        class="d-flex align-center jusitfy-center mr-2 app-trailer-info__rating"
-      >
-        <v-icon>mdi-star</v-icon>
-        <span class="text-h6">{{ item.ratingKinopoisk }}</span>
-      </div>
-      <span
-        :aria-label="$t('trailer.info.viewersCount')"
-        class="text-h6 app-trailer-info__views"
-      >{{ item.ratingKinopoiskVoteCount }}</span>
-    </div>
     <div class="d-flex flex-column flex-sm-row align-start align-sm-center justify-start mt-2">
       <div
         v-if="genresList"
@@ -55,6 +39,22 @@
         />
         <h4>{{ ratingLimits }}</h4>
       </div>
+    </div>
+    <div
+      v-if="Number(item.ratingKinopoisk)"
+      class="d-flex align-center justify-start mt-4"
+    >
+      <div
+        :aria-label="$t('trailer.info.rating')"
+        class="d-flex align-center jusitfy-center mr-2 app-trailer-info__rating"
+      >
+        <v-icon>mdi-star</v-icon>
+        <span class="text-h6">{{ item.ratingKinopoisk }}</span>
+      </div>
+      <span
+        :aria-label="$t('trailer.info.viewersCount')"
+        class="text-h6 app-trailer-info__views"
+      >{{ item.ratingKinopoiskVoteCount }}</span>
     </div>
   </div>
 </template>
