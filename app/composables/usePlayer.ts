@@ -29,11 +29,11 @@ export function usePlayer(kinopoiskId: Ref<string> | null) {
     }
     switch (playerAlias.value) {
       case PlayerAlias.lumex:
-        return `https://p.lumex.pw//LDSZJq4uCNvY?kp_id=${kinopoiskId.value}&domain=${API_CONFIG.host}`
+        return `https://p.lumex.space/LDSZJq4uCNvY?kp_id=${kinopoiskId.value}&domain=new.primetime.su`
       case PlayerAlias.tobaco:
         return `https://api.tobaco.ws/embed/kp/${kinopoiskId.value}`
       default:
-        return `https://p.lumex.pw//LDSZJq4uCNvY?kp_id=${kinopoiskId.value}&domain=${API_CONFIG.host}`
+        return `https://p.lumex.space/LDSZJq4uCNvY?kp_id=${kinopoiskId.value}&domain=new.primetime.su`
     }
   })
 
