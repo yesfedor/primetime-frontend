@@ -1,10 +1,6 @@
 import type { Ref } from 'vue'
 import { computed } from 'vue'
 
-const API_CONFIG = {
-  host: 'primetime.su',
-}
-
 export enum PlayerAlias {
   lumex = 'lumex',
   tobaco = 'tobaco',

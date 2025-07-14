@@ -18,6 +18,7 @@ cp "./environments/${ENVIRONMENT_NAME}.env" .env
 nvm use
 npm ci
 npm run build
+npm i @rollup/rollup-linux-x64-gnu --save-dev
 
 BRANCH_NAME=${BRANCH_NAME} ENVIRONMENT_NAME=${ENVIRONMENT_NAME} PORT=3400 docker-compose up -d --build --force-recreate
 
