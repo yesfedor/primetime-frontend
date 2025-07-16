@@ -58,12 +58,10 @@ const { height } = useWatchHeight()
 const authProvider = useAuth()
 
 const toWatchPage = computed(() => {
-  const kpid = authProvider.user.isAuth ? (item.value?.slug || item.value.kinopoiskId) : item.value.kinopoiskId
-
   return {
     name: authProvider.user.isAuth ? RouteNamesEnum.watch : RouteNamesEnum.trailer,
     params: {
-      kpid,
+      kpid: item.value.kinopoiskId,
     },
     query: {
       [UTM_SOURCE_KEY]: UTM_SOURCE.watchcard,
