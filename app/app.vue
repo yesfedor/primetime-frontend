@@ -1,7 +1,3 @@
-<script setup lang="ts">
-
-</script>
-
 <template>
   <div class="app-root">
     <nuxt-route-announcer />
@@ -14,3 +10,7 @@
     <core-scope />
   </div>
 </template>
+
+<script setup lang="ts">
+
+</script>

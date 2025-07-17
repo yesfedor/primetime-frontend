@@ -1,0 +1,38 @@
+@use 'sass:map';
+@use '../abstracts/forward' as *;
+
+html {
+  --liquid-base: calc(1vw / 3.6);
+
+  min-width: calc(360px - $scrollbar-width);
+  min-height: 100dvh;
+  font-size: var(--liquid-base);
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    width: $scrollbar-width;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: var(--background-secondary);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: var(--card-bg);
+  }
+
+  @include bp-tablet {
+    --liquid-base: calc(1vw / 7.68);
+  }
+
+  @include bp-desktop {
+    --liquid-base: calc(1vw / 19.2);
+  }
+}
+
+body {
+  font-size: 16rem;
+}

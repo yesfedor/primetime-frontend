@@ -1,56 +1,24 @@
-<script lang="ts" setup>
-const nuxtApp = useNuxtApp()
-
-const baseUrl = ref(nuxtApp.$config.public.BASE_URL)
-const nuxtVersion = ref(nuxtApp.versions.nuxt)
-
-// example use layers
-const { first } = await useCatCatalog()
-
-const { t } = useI18n()
-</script>
-
 <template>
   <div class="app-page-home">
-    <h1 class="app-page-home__title">
-      {{ t('welcome') }}
-    </h1>
-
-    <icon
-      name="asset:reorder"
-      size="16"
-    />
-
-    <p>This is production: Nuxt Core Template v{{ nuxtVersion }}</p>
-
-    <p>Host: {{ baseUrl }}</p>
-
-    <template v-if="first?.id">
-      <p>Your unique cat</p>
-      <img
-        :src="first.url"
-        :alt="first.id"
-        class="app-page-home__cat"
-      >
-    </template>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+    <span>span span span</span>
+    <p>paragraph paragraph paragraph</p>
+    <label>label label label</label>
+    <div>div div div</div>
   </div>
 </template>
 
+<script lang="ts" setup>
+</script>
+
 <style lang="scss">
 .app-page-home {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  font-family: Roboto, system-ui;
-
-  &__title {
-    color: #00dc82;
-  }
-
-  &__cat {
-    max-width: 50vw;
-    max-height: 50vh;
-    object-fit: cover;
-  }
+  min-height: 250dvh;
+  font-size: 16rem;
 }
 </style>

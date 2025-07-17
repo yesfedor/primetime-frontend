@@ -1,7 +1,3 @@
-<script lang="ts" setup>
-const error = useError()
-</script>
-
 <template>
   <div class="app-root app-root--error">
     <nuxt-route-announcer />
@@ -19,3 +15,7 @@ const error = useError()
     <core-scope />
   </div>
 </template>
+
+<script lang="ts" setup>
+const error = useError()
+</script>

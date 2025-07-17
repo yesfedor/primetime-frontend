@@ -1,0 +1,76 @@
+html {
+  --background: #121212;           /* Основной фон */
+  --background-secondary: #1e1e1e; /* Вторичный фон (карточки, панели) */
+  --background-tertiary: #2a2a2a;  /* Третичный фон (hover состояния) */
+  --card-bg: #1e1e1e;             /* Фон карточек */
+  --card-hover: #2a2a2a;          /* Фон карточек при hover */
+  --surface: #1e1e1e;             /* Поверхности */
+  --surface-hover: #333333;       /* Поверхности при hover */
+  --border: #333333;              /* Основные границы */
+  --border-light: #444444;        /* Светлые границы */
+  --border-hover: #555555;        /* Границы при hover */
+  --foreground: #ffffff;          /* Основной текст */
+  --text-primary: #ffffff;        /* Первичный текст */
+  --text-secondary: #e5e5e5;      /* Вторичный текст */
+  --text-muted: #888888;          /* Приглушенный текст */
+  --text-disabled: #666666;       /* Отключенный текст */
+  --text-placeholder: #999999;    /* Placeholder текст */
+  --accent: #ff0000;              /* Основной акцентный цвет */
+  --accent-hover: #cc0000;        /* Акцент при hover */
+  --accent-dark: #990000;         /* Темный акцент */
+  --accent-light: #ff3333;        /* Светлый акцент */
+  --success: #10b981;            /* Успех (зеленый) */
+  --success-hover: #059669;      /* Успех при hover */
+  --warning: #f59e0b;            /* Предупреждение (желтый) */
+  --warning-hover: #d97706;      /* Предупреждение при hover */
+  --error: #ef4444;              /* Ошибка (красный) */
+  --error-hover: #dc2626;        /* Ошибка при hover */
+  --info: #3b82f6;               /* Информация (синий) */
+  --info-hover: #2563eb;         /* Информация при hover */
+  --badge-movie: #3b82f6;         /* Бейдж фильма (синий) */
+  --badge-movie-hover: #2563eb;   /* Бейдж фильма при hover */
+  --badge-series: #10b981;        /* Бейдж сериала (зеленый) */
+  --badge-series-hover: #059669;  /* Бейдж сериала при hover */
+  --badge-quality: #f59e0b;       /* Бейдж качества (желтый) */
+  --badge-quality-hover: #d97706; /* Бейдж качества при hover */
+  --badge-trailer: #f97316;       /* Бейдж трейлера (оранжевый) */
+  --badge-trailer-hover: #ea580c; /* Бейдж трейлера при hover */
+  --badge-rating: #ffd700;        /* Рейтинг (золотой) */
+  --badge-rating-text: #000000;   /* Текст на рейтинге */
+  --progress-bg: #4b5563;         /* Фон прогресс-бара */
+  --progress-fill: #ef4444;       /* Заполнение прогресс-бара */
+  --slider-track: #4b5563;        /* Трек слайдера */
+  --slider-thumb: #ef4444;        /* Ползунок слайдера */
+  --slider-thumb-hover: #dc2626;  /* Ползунок при hover */
+  --slider-thumb-border: #ffffff; /* Граница ползунка */
+  --spinner-border: #333333;      /* Граница спиннера */
+  --spinner-accent: #ef4444;      /* Акцент спиннера */
+  --loading-bg: #1f2937;          /* Фон загрузки */
+  --loading-shimmer: #374151;     /* Shimmer эффект */
+  --focus-ring: #ff0000;          /* Кольцо фокуса */
+  --hover-bg: rgba(255, 255, 255, 0.1);  /* Фон при hover */
+  --active-bg: rgba(255, 255, 255, 0.2); /* Фон при активации */
+  --overlay-light: rgba(0, 0, 0, 0.3);    /* Легкий оверлей */
+  --overlay-medium: rgba(0, 0, 0, 0.5);   /* Средний оверлей */
+  --overlay-heavy: rgba(0, 0, 0, 0.8);    /* Тяжелый оверлей */
+  --overlay-backdrop: rgba(0, 0, 0, 0.6); /* Фон модалок */
+  --glass-bg: rgba(30, 30, 30, 0.8);      /* Стеклянный эффект */
+  --glass-border: rgba(255, 255, 255, 0.1); /* Граница стекла */
+  --btn-primary-bg: linear-gradient(135deg, #ff0000, #cc0000);
+  --btn-primary-hover: linear-gradient(135deg, #cc0000, #990000);
+  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
+  --btn-secondary-hover: rgba(255, 255, 255, 0.2);
+  --btn-secondary-border: rgba(255, 255, 255, 0.2);
+  --btn-secondary-border-hover: rgba(255, 255, 255, 0.3);
+  --shadow-sm: rgba(0, 0, 0, 0.1);
+  --shadow-md: rgba(0, 0, 0, 0.3);
+  --shadow-lg: rgba(0, 0, 0, 0.5);
+  --shadow-glow: rgba(239, 68, 68, 0.3);     /* Красное свечение */
+  --shadow-glow-lg: rgba(239, 68, 68, 0.4);  /* Сильное красное свечение */
+}
+
+body {
+  color: var(--text-primary);
+  background: var(--background);
+  border-color: var(--border);
+}

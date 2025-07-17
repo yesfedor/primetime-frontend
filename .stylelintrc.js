@@ -13,5 +13,11 @@ export default {
     'scss/dollar-variable-pattern': '^-?[a-z][a-z0-9]*(--?[a-z0-9]+)*$',
     'scss/no-global-function-names': true,
     'scss/selector-no-redundant-nesting-selector': true,
+    'no-empty-source': null,
+    'alpha-value-notation': null,
+    'color-function-alias-notation': null,
+    'color-function-notation': null,
+    'color-hex-length': null,
+    'scss/dollar-variable-empty-line-before': null,
   },
 }

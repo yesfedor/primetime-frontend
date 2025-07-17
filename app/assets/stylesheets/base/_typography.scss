@@ -1,1 +1,593 @@
+@use '../abstracts/forward' as *;
+
 /* typography */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+/* headings  */
+h1 {
+  font-size: 36rem; // text-4xl mobile
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 48rem; // text-5xl tablet
+  }
+
+  @include bp-desktop {
+    font-size: 72rem; // text-7xl desktop - Hero titles
+  }
+}
+
+h2 {
+  font-size: 24rem; // text-2xl mobile
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 30rem; // text-3xl tablet+
+  }
+
+  @include bp-desktop {
+    font-size: 30rem;
+  }
+}
+
+h3 {
+  font-size: 20rem; // text-xl
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 20rem;
+  }
+
+  @include bp-desktop {
+    font-size: 20rem;
+  }
+}
+
+h4 {
+  font-size: 18rem; // text-lg
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 18rem;
+  }
+
+  @include bp-desktop {
+    font-size: 18rem;
+  }
+}
+
+h5 {
+  font-size: 16rem; // text-base
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 16rem;
+  }
+
+  @include bp-desktop {
+    font-size: 16rem;
+  }
+}
+
+h6 {
+  font-size: 14rem; // text-sm
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+/* Body text and paragraphs */
+p {
+  font-size: 16rem; // text-base mobile
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+
+  @include bp-tablet {
+    font-size: 18rem; // text-lg tablet
+  }
+
+  @include bp-desktop {
+    font-size: 20rem; // text-xl desktop - Hero descriptions
+  }
+}
+
+/* Spans and inline text */
+span {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* Labels */
+label {
+  font-size: 14rem; // text-sm
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-primary);
+  display: block;
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+/* buttons */
+button {
+  font-size: 14rem; // text-sm - default button size
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+
+  // Large buttons (Hero, Auth modals)
+  &.btn-large {
+    font-size: 18rem; // text-lg
+
+    @include bp-tablet {
+      font-size: 18rem;
+    }
+
+    @include bp-desktop {
+      font-size: 18rem;
+    }
+  }
+
+  // Small buttons (badges, compact UI)
+  &.btn-small {
+    font-size: 12rem; // text-xs
+
+    @include bp-tablet {
+      font-size: 12rem;
+    }
+
+    @include bp-desktop {
+      font-size: 12rem;
+    }
+  }
+}
+
+/* Input fields */
+input, textarea, select {
+  font-size: 14rem; // text-sm
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+
+  &::placeholder {
+    color: var(--text-placeholder);
+    font-weight: 400;
+  }
+}
+
+/* links */
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--accent);
+  }
+}
+
+/* small text elements */
+small {
+  font-size: 12rem; // text-xs
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-muted);
+
+  @include bp-tablet {
+    font-size: 12rem;
+  }
+
+  @include bp-desktop {
+    font-size: 12rem;
+  }
+}
+
+/* code elements */
+code, pre {
+  font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  font-size: 14rem;
+  line-height: 1.4;
+  color: var(--text-primary);
+  background: var(--background-secondary);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4rem;
+}
+
+/* utility classes for specific use cases */
+
+// hero section text
+.hero-title {
+  font-size: 36rem; // text-4xl mobile
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 48rem; // text-5xl tablet
+  }
+
+  @include bp-desktop {
+    font-size: 72rem; // text-7xl desktop
+  }
+}
+
+.hero-description {
+  font-size: 16rem; // text-base mobile
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--text-secondary);
+
+  @include bp-tablet {
+    font-size: 18rem; // text-lg tablet
+  }
+
+  @include bp-desktop {
+    font-size: 20rem; // text-xl desktop
+  }
+}
+
+// Section headers
+.section-title {
+  font-size: 24rem; // text-2xl mobile
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 30rem; // text-3xl tablet+
+  }
+
+  @include bp-desktop {
+    font-size: 30rem;
+  }
+}
+
+.section-subtitle {
+  font-size: 14rem; // text-sm
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-muted);
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+// Movie card text
+.movie-title {
+  font-size: 14rem; // text-sm
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+.movie-meta {
+  font-size: 12rem; // text-xs
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-muted);
+
+  @include bp-tablet {
+    font-size: 12rem;
+  }
+
+  @include bp-desktop {
+    font-size: 12rem;
+  }
+}
+
+// Badge text
+.badge-text {
+  font-size: 12rem; // text-xs
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+
+  @include bp-tablet {
+    font-size: 12rem;
+  }
+
+  @include bp-desktop {
+    font-size: 12rem;
+  }
+}
+
+// Navigation text
+.nav-text {
+  font-size: 14rem; // text-sm
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--text-secondary);
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+.nav-text-small {
+  font-size: 12rem; // text-xs
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-muted);
+
+  @include bp-tablet {
+    font-size: 12rem;
+  }
+
+  @include bp-desktop {
+    font-size: 12rem;
+  }
+}
+
+// Video player text
+.video-title {
+  font-size: 18rem; // text-lg
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 18rem;
+  }
+
+  @include bp-desktop {
+    font-size: 18rem;
+  }
+}
+
+.video-time {
+  font-size: 14rem; // text-sm
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+// User interface text
+.ui-text {
+  font-size: 14rem; // text-sm
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-secondary);
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+.ui-text-small {
+  font-size: 12rem; // text-xs
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-muted);
+
+  @include bp-tablet {
+    font-size: 12rem;
+  }
+
+  @include bp-desktop {
+    font-size: 12rem;
+  }
+}
+
+// Logo text
+.logo-text {
+  font-size: 20rem; // text-xl
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 20rem;
+  }
+
+  @include bp-desktop {
+    font-size: 20rem;
+  }
+}
+
+.logo-subtitle {
+  font-size: 12rem; // text-xs
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-muted);
+
+  @include bp-tablet {
+    font-size: 12rem;
+  }
+
+  @include bp-desktop {
+    font-size: 12rem;
+  }
+}
+
+// Rating and numeric text
+.rating-text {
+  font-size: 14rem; // text-sm
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+
+  @include bp-tablet {
+    font-size: 14rem;
+  }
+
+  @include bp-desktop {
+    font-size: 14rem;
+  }
+}
+
+.rating-text-small {
+  font-size: 12rem; // text-xs
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
+
+  @include bp-tablet {
+    font-size: 12rem;
+  }
+
+  @include bp-desktop {
+    font-size: 12rem;
+  }
+}
+
+// Modal and overlay text
+.modal-title {
+  font-size: 24rem; // text-2xl
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--text-primary);
+
+  @include bp-tablet {
+    font-size: 24rem;
+  }
+
+  @include bp-desktop {
+    font-size: 24rem;
+  }
+}
+
+.modal-text {
+  font-size: 16rem; // text-base
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--text-secondary);
+
+  @include bp-tablet {
+    font-size: 16rem;
+  }
+
+  @include bp-desktop {
+    font-size: 16rem;
+  }
+}
+
+// Responsive text utilities
+.text-responsive {
+  font-size: 14rem; // text-sm mobile
+
+  @include bp-tablet {
+    font-size: 16rem; // text-base tablet
+  }
+
+  @include bp-desktop {
+    font-size: 18rem; // text-lg desktop
+  }
+}
+
+.text-responsive-large {
+  font-size: 18rem; // text-lg mobile
+
+  @include bp-tablet {
+    font-size: 20rem; // text-xl tablet
+  }
+
+  @include bp-desktop {
+    font-size: 24rem; // text-2xl desktop
+  }
+}
+
+// Text truncation utilities
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.text-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
