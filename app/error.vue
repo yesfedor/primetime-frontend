@@ -1,6 +1,4 @@
 <script lang="ts" setup>
-import Page404 from '~/pages/error/404.vue'
-
 const error = useError()
 </script>
 
@@ -10,15 +8,12 @@ const error = useError()
     <vite-pwa-manifest />
 
     <nuxt-layout name="default">
-      <Page404 />
-      <dev-only>
-        <pre
-          v-if="error"
-          style="white-space: pre-line; text-align: center;"
-        >
-          [VueRouterError]: {{ error.message }}
-        </pre>
-      </dev-only>
+      <pre
+        v-if="error"
+        style="white-space: pre-line;"
+      >
+        [VueRouterError]: {{ error.message }}
+      </pre>
     </nuxt-layout>
 
     <core-scope />

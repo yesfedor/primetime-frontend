@@ -1,99 +1,12 @@
 import { defineNuxtConfig } from 'nuxt/config'
 
-import vuetify from 'vite-plugin-vuetify'
-
 import experimentalConfig from './configs/experimental.config'
 import headConfig from './configs/head.config'
 import pwaConfig from './configs/pwa.config'
-
 import viteConfig from './configs/vite.config'
 
 export default defineNuxtConfig({
   // https://nuxt.com/docs/api/configuration/nuxt-config
-  app: {
-    head: headConfig,
-  },
-
-  build: {
-    transpile: [
-      'axios',
-      'vuetify',
-    ],
-  },
-
-  compatibilityDate: '2024-09-09',
-
-  components: {
-    dirs: [
-      {
-        path: '~/components',
-        pathPrefix: true,
-      },
-    ],
-  },
-
-  css: [
-    '~/assets/stylesheets/main.scss',
-  ],
-
-  devServer: {
-    host: String(process.env.NITRO_DEV_HOST) || '0.0.0.0',
-    port: Number(process.env.NITRO_DEV_PORT) || 3000,
-  },
-
-  devtools: {
-    enabled: Boolean(process.env.APP_DEVTOOLS),
-  },
-
-  dir: {
-    public: './public',
-  },
-
-  eslint: {
-    config: {
-      standalone: false,
-      stylistic: true,
-    },
-    checker: false,
-  },
-
-  experimental: experimentalConfig,
-
-  future: {
-    compatibilityVersion: 4,
-  },
-
-  i18n: {
-    defaultLocale: 'ru-RU',
-    detectBrowserLanguage: {
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      useCookie: false,
-    },
-    langDir: 'locales',
-    lazy: true,
-    locales: [
-      {
-        code: 'ru-RU',
-        file: 'ru.ts',
-      },
-      {
-        code: 'en-US',
-        file: 'en.ts',
-      },
-    ],
-    strategy: 'no_prefix',
-    vueI18n: './configs/i18n.config.ts',
-  },
-
-  imports: {
-    dirs: [
-      './api/**',
-      './composables/**',
-      './utils/**',
-      '../shared/**',
-    ],
-  },
 
   modules: [
     // https://eslint.nuxt.com/packages/module
@@ -107,28 +20,45 @@ export default defineNuxtConfig({
     '@vite-pwa/nuxt',
     // https://nuxt.com/modules/vee-validate
     '@vee-validate/nuxt',
-    // https://nuxt.com/modules/icons
-    'nuxt-icons',
+    // https://github.com/nuxt/icon
+    '@nuxt/icon',
     // https://v8.i18n.nuxtjs.org/options/vue-i18n
     '@nuxtjs/i18n',
     // https://nuxt.com/modules/device
     '@nuxtjs/device',
-    // https://vuetifyjs.com/en/getting-started/installation/#using-nuxt-3
-    (_options, nuxt) => {
-      nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error
-        config.plugins.push(vuetify({
-          autoImport: true,
-        }))
-      })
-    },
   ],
 
-  pinia: {
-    storesDirs: ['./app/stores/**'],
+  ssr: Boolean(process.env.NUXT_SSR),
+
+  components: {
+    dirs: [
+      {
+        path: '~/components',
+        pathPrefix: true,
+      },
+    ],
   },
 
-  pwa: pwaConfig,
+  imports: {
+    dirs: [
+      './api/**',
+      './composables/**',
+      './utils/**',
+      '../shared/**',
+    ],
+  },
+
+  devtools: {
+    enabled: Boolean(process.env.NUXT_DEVTOOLS),
+  },
+
+  app: {
+    head: headConfig,
+  },
+
+  css: [
+    '~/assets/stylesheets/main.scss',
+  ],
 
   runtimeConfig: {
     public: {
@@ -140,13 +70,68 @@ export default defineNuxtConfig({
     },
   },
 
-  srcDir: './app',
-
-  ssr: Boolean(process.env.NUXT_SSR),
-  storybook: {
-    route: '/_storybook',
-    port: Number(process.env.STORYBOOK_PORT || 8081),
+  sourcemap: {
+    client: Boolean(process.env.APP_DEBUG),
+    server: Boolean(process.env.APP_DEBUG || process.env.NUXT_SSR ? 1 : process.env.APP_DEBUG),
   },
-  stylelint: {},
+
+  devServer: {
+    host: String(process.env.HOST) || '0.0.0.0',
+    port: Number(process.env.NITRO_PORT) || 3000,
+  },
+
+  features: {
+    inlineStyles: false,
+  },
+
+  experimental: experimentalConfig,
+
+  compatibilityDate: '2025-06-10',
+
   vite: viteConfig,
+
+  eslint: {
+    config: {
+      standalone: false,
+      stylistic: true,
+    },
+    checker: true,
+  },
+
+  i18n: {
+    defaultLocale: 'en',
+    detectBrowserLanguage: {
+      cookieKey: 'i18n_redirected',
+      redirectOn: 'root',
+      useCookie: true,
+    },
+    langDir: 'locales',
+    lazy: true,
+    locales: [
+      {
+        code: 'en',
+        file: 'en.ts',
+      },
+    ],
+    strategy: 'prefix_except_default',
+    vueI18n: '../configs/i18n.config.ts',
+  },
+
+  icon: {
+    provider: 'server',
+    customCollections: [
+      {
+        prefix: 'asset',
+        dir: './app/assets/icons',
+      },
+    ],
+  },
+
+  pinia: {
+    storesDirs: ['./app/stores/**'],
+  },
+
+  pwa: pwaConfig,
+
+  stylelint: {},
 })

@@ -1,9 +1,13 @@
 <script lang="ts" setup>
-import { useTheme } from 'vuetify'
+interface Props {
+  /** The name of the user */
+  name?: string
+}
 
-const theme = useTheme()
-const loadingColor = computed(() => {
-  return theme.global.current.value.dark ? '#fff' : '#000'
+const props = defineProps<Props>()
+
+provide(props.name, {
+  scope: {},
 })
 </script>
 
@@ -12,7 +16,6 @@ const loadingColor = computed(() => {
     <nuxt-loading-indicator
       :throttle="0"
       :duration="5e3"
-      :color="loadingColor"
     />
   </section>
 </template>

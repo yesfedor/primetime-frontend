@@ -1,49 +1,56 @@
-<template>
-  <section class="app-home-page">
-    <AppWatchParallax
-      :poster-url="cardFirstItem && getPosterImageByKinopoiskid(cardFirstItem.kinopoiskId) || ''"
-      :loading="isLoading"
-      label-key="home.title"
-    />
-  </section>
-  <v-container fluid>
-    <v-row>
-      <v-col cols="12">
-        <h2>{{ $t('home.subtitle') }}</h2>
-      </v-col>
+<script lang="ts" setup>
+const nuxtApp = useNuxtApp()
 
-      <v-col cols="12">
-        <AppWatchList
-          :list="cardList"
-          :is-loading="isLoading"
-          use-skeleton
-        />
-      </v-col>
-    </v-row>
-  </v-container>
+const baseUrl = ref(nuxtApp.$config.public.BASE_URL)
+const nuxtVersion = ref(nuxtApp.versions.nuxt)
+
+// example use layers
+const { first } = await useCatCatalog()
+
+const { t } = useI18n()
+</script>
+
+<template>
+  <div class="app-page-home">
+    <h1 class="app-page-home__title">
+      {{ t('welcome') }}
+    </h1>
+
+    <icon
+      name="asset:reorder"
+      size="16"
+    />
+
+    <p>This is production: Nuxt Core Template v{{ nuxtVersion }}</p>
+
+    <p>Host: {{ baseUrl }}</p>
+
+    <template v-if="first?.id">
+      <p>Your unique cat</p>
+      <img
+        :src="first.url"
+        :alt="first.id"
+        class="app-page-home__cat"
+      >
+    </template>
+  </div>
 </template>
 
-<script lang="ts" setup>
-import { useTitle } from '@vueuse/core'
-import { useI18n } from 'vue-i18n'
-import { watchApi, type WatchApiContentItem } from '~/api/watch'
-import AppWatchList from '~/components/watch/List.vue'
-import AppWatchParallax from '~/components/watch/Parallax.vue'
-import { useWatchList } from '~/composables/useWatchList'
+<style lang="scss">
+.app-page-home {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  font-family: Roboto, system-ui;
 
-const i18n = useI18n()
-useTitle(i18n.t('home.seo_title'))
+  &__title {
+    color: #00dc82;
+  }
 
-const authProvider = useAuth()
-
-const { cardFirstItem, cardList, isLoading } = await useWatchList<WatchApiContentItem>({
-  uuid: 'home-suggestion-list',
-  async loadFn() {
-    const result = await watchApi.suggestionGetByUser(authProvider.getJwt())
-    if (result?.total) {
-      return result.content
-    }
-    return []
-  },
-})
-</script>
+  &__cat {
+    max-width: 50vw;
+    max-height: 50vh;
+    object-fit: cover;
+  }
+}
+</style>

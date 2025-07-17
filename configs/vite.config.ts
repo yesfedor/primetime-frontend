@@ -1,11 +1,12 @@
 import type { NuxtOptions } from '@nuxt/schema'
-import { transformAssetUrls } from 'vite-plugin-vuetify'
 
 export default <Partial<NuxtOptions['vite']>> {
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@use "~/assets/stylesheets/additional.scss" as *;',
+        additionalData: `
+          @use "~/assets/stylesheets/additional.scss" as *;
+        `,
       },
     },
   },
@@ -18,12 +19,7 @@ export default <Partial<NuxtOptions['vite']>> {
     },
     hmr: {
       protocol: 'ws',
-      host: '0.0.0.0',
-    },
-  },
-  vue: {
-    template: {
-      transformAssetUrls,
+      host: String(process.env.HOST) || '0.0.0.0',
     },
   },
 }

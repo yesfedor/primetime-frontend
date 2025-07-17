@@ -1,6 +1,6 @@
 export default defineNuxtPlugin({
   name: 'app:initialization',
-  dependsOn: ['app:eventBus', 'app:authService'],
+  dependsOn: ['app:eventBus'],
 
   async setup({ $config }) {
     // deps

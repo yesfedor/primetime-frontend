@@ -2,14 +2,15 @@ import type { NuxtOptions } from '@nuxt/schema'
 
 export default <Partial<NuxtOptions['pwa']>> {
   mode: 'development',
-  strategies: 'generateSW',
+  selfDestroying: true,
+  strategies: 'injectManifest',
   client: {
     periodicSyncForUpdates: 60,
   },
   registerType: 'autoUpdate',
   manifest: {
-    id: 'su.primetime',
-    name: 'PrimeTime - online cinema',
+    id: 'su.iny.nuxt-core-template',
+    name: 'Nuxt Core Template v3.12.2',
     display: 'standalone',
     display_override: ['window-controls-overlay', 'standalone'],
     short_name: 'Nuxt',
@@ -37,12 +38,5 @@ export default <Partial<NuxtOptions['pwa']>> {
       },
     ],
     lang: 'en',
-  },
-  workbox: {
-    globPatterns: ['**\\/*.{js,wasm,css,html,webmanifest}'],
-    skipWaiting: true,
-    navigateFallback: undefined,
-    navigationPreload: false,
-    runtimeCaching: undefined,
   },
 }
