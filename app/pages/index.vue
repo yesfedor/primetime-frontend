@@ -10,7 +10,8 @@
     <p>paragraph paragraph paragraph</p>
     <label>label label label</label>
     <div>div div div</div>
-    <Icon name="jam:align-justify" />
+    <icon name="jam:align-justify" />
+    <ui-button>Hello</ui-button>
   </div>
 </template>
 

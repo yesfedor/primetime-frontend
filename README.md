@@ -38,10 +38,7 @@ Thus, the following plugins are now configured and supported:
 
 ### Installation
 
-> You can view the Node.js version in [.nvmrc](./.nvmrc)
-
 ```bash
-nvm i && nvm use
 cp ./environments/local.env .env
 ```
 
@@ -50,7 +47,8 @@ cp ./environments/local.env .env
 ### Dev Mode
 
 ```bash
-npm run dev
+bun install
+bun run dev
 ```
 
 ---
@@ -58,11 +56,5 @@ npm run dev
 ### Build and start server
 
 ```bash
-npm run build && node .output/server/index.mjs
-```
-
-### SSG mode and start server
-
-```bash
-nuxi generate && npx serve .output/public
+bun run build && bun .output/server/index.mjs
 ```

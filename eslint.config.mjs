@@ -9,4 +9,8 @@ export default createConfigForNuxt({
       sortConfigKeys: true,
     },
   },
+}).append({
+  rules: {
+    'vue/html-self-closing': 'off',
+  },
 })
