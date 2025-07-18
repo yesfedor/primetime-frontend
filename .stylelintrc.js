@@ -19,5 +19,10 @@ export default {
     'color-function-notation': null,
     'color-hex-length': null,
     'scss/dollar-variable-empty-line-before': null,
+    'declaration-block-no-redundant-longhand-properties': null,
+    'block-no-empty': null,
+    'at-rule-empty-line-before': null,
+    'no-duplicate-selectors': null,
+    'font-family-name-quotes': null,
   },
 }

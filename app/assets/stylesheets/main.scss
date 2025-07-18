@@ -9,7 +9,6 @@
 @use 'base/reset' as *;
 @use 'base/base' as *;
 @use 'base/liquid' as *;
-@use 'base/theme' as *;
 @use 'base/typography' as *;
 
 /* 4. partials - layout */
@@ -19,6 +18,7 @@
 /* 6. pages */
 
 /* 7. themes */
+@use 'themes/base' as *;
 
 /* 8. shame */
 @use 'shame' as *;

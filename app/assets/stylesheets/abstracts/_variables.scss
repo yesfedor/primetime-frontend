@@ -1,7 +1,19 @@
 /* variables */
 $scrollbar-width: 4px;
+$spacing-base: 2rem;
 
 $breakpoints: (
   tablet: 768px,
   desktop: 1200px,
+);
+
+$z-indexes: (
+  dialog: 100,
+  backdrop: 99,
+  header: 50,
+  aside: 40,
+  navigation-bottom: 30,
+  dropdown: 20,
+  overlay: 10,
+  below: -1,
 );

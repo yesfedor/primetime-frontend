@@ -3,34 +3,33 @@
 
 html {
   --liquid-base: calc(1vw / 3.6);
+  --liquid-header-height: 56rem;
+  --liquid-aside-width: 280rem;
+  --liquid-aside-top: var(--liquid-header-height);
+  --liquid-aside-height: calc(100dvh - var(--liquid-header-height));
+  --liquid-aside-container-spacing: #{spacing(8)};
+  --liquid-aside-content-gap-y: #{spacing(12)};
+  --liquid-aside-content-spacing-x: #{spacing(6)};
+  --liquid-footer-spacing: #{spacing(24)} #{spacing(8)};
 
+  @include bp-tablet {
+    --liquid-base: calc(1vw / 7.68);
+    --liquid-footer-spacing: #{spacing(24)} #{spacing(12)};
+  }
+
+  @include bp-desktop {
+    --liquid-base: calc(1vw / 19.2);
+    --liquid-footer-spacing: #{spacing(24)} #{spacing(16)};
+  }
+}
+
+html {
   min-width: calc(360px - $scrollbar-width);
   min-height: 100dvh;
   font-size: var(--liquid-base);
   scroll-behavior: smooth;
 
-  &::-webkit-scrollbar {
-    width: $scrollbar-width;
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background: var(--background-secondary);
-  }
-
-  &::-webkit-scrollbar-track {
-    border-radius: 4px;
-    background: var(--card-bg);
-  }
-
-  @include bp-tablet {
-    --liquid-base: calc(1vw / 7.68);
-  }
-
-  @include bp-desktop {
-    --liquid-base: calc(1vw / 19.2);
-  }
+  @include use-scrollbar($scrollbar-width);
 }
 
 body {

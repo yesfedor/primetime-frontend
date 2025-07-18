@@ -31,3 +31,20 @@
     @content;
   }
 }
+
+@mixin use-scrollbar($width) {
+  &::-webkit-scrollbar {
+    width: $width;
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background: var(--border);
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: var(--background);
+  }
+}
