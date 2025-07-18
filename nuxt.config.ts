@@ -24,6 +24,8 @@ export default defineNuxtConfig({
     '@nuxt/icon',
     // https://nuxt.com/modules/device
     '@nuxtjs/device',
+    // https://github.com/unplugin/unplugin-icons
+    'unplugin-icons/nuxt',
   ],
 
   ssr: Boolean(process.env.NUXT_SSR),

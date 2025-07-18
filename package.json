@@ -22,6 +22,7 @@
     "lint:style:fix": "stylelint **/*.{vue,css,scss,sass} --fix"
   },
   "devDependencies": {
+    "@iconify-json/jam": "^1.2.3",
     "@nuxt/devtools": "^2.5.0",
     "@nuxt/eslint": "^1.4.1",
     "@nuxt/eslint-config": "^1.4.1",
@@ -53,6 +54,7 @@
     "stylelint-config-standard-scss": "^15.0.0",
     "stylelint-config-standard-vue": "^1.0.0",
     "stylelint-scss": "^6.12.0",
+    "unplugin-icons": "^22.1.0",
     "vite-plugin-eslint2": "^5.0.2",
     "vue": "latest",
     "vue-router": "^4.4.5",

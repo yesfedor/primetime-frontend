@@ -7,10 +7,10 @@
     <div class="ui-logo__square">
       <span
         :class="{
-          'nav-text': isLarge,
+          'nav-text': !isLarge,
           'text-h3': isLarge,
         }"
-        class="ui-logo__short-name"
+        class="ui-logo__short-name font-bold"
       >
         PT
       </span>
@@ -65,6 +65,7 @@ const isLarge = computed(() => props.size === 'large')
   display: flex;
   align-items: center;
   gap: 0 spacing(6);
+  user-select: none;
 
   &__square {
     width: 32rem;
