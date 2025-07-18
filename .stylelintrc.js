@@ -24,5 +24,6 @@ export default {
     'at-rule-empty-line-before': null,
     'no-duplicate-selectors': null,
     'font-family-name-quotes': null,
+    'selector-class-pattern': null,
   },
 }

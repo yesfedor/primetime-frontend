@@ -1,6 +1,6 @@
 <template>
   <header class="app-header">
-    PrimeTime
+    <ui-logo square-on-mobile />
   </header>
 </template>
 

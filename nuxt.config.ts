@@ -22,8 +22,6 @@ export default defineNuxtConfig({
     '@vee-validate/nuxt',
     // https://github.com/nuxt/icon
     '@nuxt/icon',
-    // https://v8.i18n.nuxtjs.org/options/vue-i18n
-    '@nuxtjs/i18n',
     // https://nuxt.com/modules/device
     '@nuxtjs/device',
   ],
@@ -96,25 +94,6 @@ export default defineNuxtConfig({
       stylistic: true,
     },
     checker: true,
-  },
-
-  i18n: {
-    defaultLocale: 'en',
-    detectBrowserLanguage: {
-      cookieKey: 'i18n_redirected',
-      redirectOn: 'root',
-      useCookie: true,
-    },
-    langDir: 'locales',
-    lazy: true,
-    locales: [
-      {
-        code: 'en',
-        file: 'en.ts',
-      },
-    ],
-    strategy: 'prefix_except_default',
-    vueI18n: '../configs/i18n.config.ts',
   },
 
   icon: {
