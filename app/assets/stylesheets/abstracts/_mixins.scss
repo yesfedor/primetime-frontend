@@ -40,11 +40,11 @@
 
   &::-webkit-scrollbar-thumb {
     border-radius: 4px;
-    background: var(--border);
+    background: var(--theme-border);
   }
 
   &::-webkit-scrollbar-track {
     border-radius: 4px;
-    background: var(--background);
+    background: var(--theme-background);
   }
 }

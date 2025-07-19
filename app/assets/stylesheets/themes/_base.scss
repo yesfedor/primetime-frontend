@@ -1,77 +1,78 @@
 html {
-  --background: #121212;           /* Основной фон */
-  --background-secondary: #1e1e1e; /* Вторичный фон (карточки, панели) */
-  --background-tertiary: #2a2a2a;  /* Третичный фон (hover состояния) */
-  --background-heavy: #0a0a0a;    /* Тяжелый фон (футер, закрывающие элементы) */
-  --card-bg: #1e1e1e;             /* Фон карточек */
-  --card-hover: #2a2a2a;          /* Фон карточек при hover */
-  --surface: #1e1e1e;             /* Поверхности */
-  --surface-hover: #333333;       /* Поверхности при hover */
-  --border: #333333;              /* Основные границы */
-  --border-light: #444444;        /* Светлые границы */
-  --border-hover: #555555;        /* Границы при hover */
-  --foreground: #ffffff;          /* Основной текст */
-  --text-primary: #ffffff;        /* Первичный текст */
-  --text-secondary: #e5e5e5;      /* Вторичный текст */
-  --text-muted: #888888;          /* Приглушенный текст */
-  --text-disabled: #666666;       /* Отключенный текст */
-  --text-placeholder: #999999;    /* Placeholder текст */
-  --accent: #ff0000;              /* Основной акцентный цвет */
-  --accent-hover: #cc0000;        /* Акцент при hover */
-  --accent-dark: #990000;         /* Темный акцент */
-  --accent-light: #ff3333;        /* Светлый акцент */
-  --success: #10b981;            /* Успех (зеленый) */
-  --success-hover: #059669;      /* Успех при hover */
-  --warning: #f59e0b;            /* Предупреждение (желтый) */
-  --warning-hover: #d97706;      /* Предупреждение при hover */
-  --error: #ef4444;              /* Ошибка (красный) */
-  --error-hover: #dc2626;        /* Ошибка при hover */
-  --info: #3b82f6;               /* Информация (синий) */
-  --info-hover: #2563eb;         /* Информация при hover */
-  --badge-movie: #3b82f6;         /* Бейдж фильма (синий) */
-  --badge-movie-hover: #2563eb;   /* Бейдж фильма при hover */
-  --badge-series: #10b981;        /* Бейдж сериала (зеленый) */
-  --badge-series-hover: #059669;  /* Бейдж сериала при hover */
-  --badge-quality: #f59e0b;       /* Бейдж качества (желтый) */
-  --badge-quality-hover: #d97706; /* Бейдж качества при hover */
-  --badge-trailer: #f97316;       /* Бейдж трейлера (оранжевый) */
-  --badge-trailer-hover: #ea580c; /* Бейдж трейлера при hover */
-  --badge-rating: #ffd700;        /* Рейтинг (золотой) */
-  --badge-rating-text: #000000;   /* Текст на рейтинге */
-  --progress-bg: #4b5563;         /* Фон прогресс-бара */
-  --progress-fill: #ef4444;       /* Заполнение прогресс-бара */
-  --slider-track: #4b5563;        /* Трек слайдера */
-  --slider-thumb: #ef4444;        /* Ползунок слайдера */
-  --slider-thumb-hover: #dc2626;  /* Ползунок при hover */
-  --slider-thumb-border: #ffffff; /* Граница ползунка */
-  --spinner-border: #333333;      /* Граница спиннера */
-  --spinner-accent: #ef4444;      /* Акцент спиннера */
-  --loading-bg: #1f2937;          /* Фон загрузки */
-  --loading-shimmer: #374151;     /* Shimmer эффект */
-  --focus-ring: #ff0000;          /* Кольцо фокуса */
-  --hover-bg: rgba(255, 255, 255, 0.1);  /* Фон при hover */
-  --active-bg: rgba(255, 255, 255, 0.2); /* Фон при активации */
-  --overlay-light: rgba(0, 0, 0, 0.3);    /* Легкий оверлей */
-  --overlay-medium: rgba(0, 0, 0, 0.5);   /* Средний оверлей */
-  --overlay-heavy: rgba(0, 0, 0, 0.8);    /* Тяжелый оверлей */
-  --overlay-backdrop: rgba(0, 0, 0, 0.6); /* Фон модалок */
-  --glass-bg: rgba(30, 30, 30, 0.8);      /* Стеклянный эффект */
-  --glass-border: rgba(255, 255, 255, 0.1); /* Граница стекла */
-  --btn-primary-bg: linear-gradient(135deg, #ff0000, #cc0000);
-  --btn-primary-hover: linear-gradient(135deg, #cc0000, #990000);
-  --btn-secondary-bg: rgba(255, 255, 255, 0.1);
-  --btn-secondary-hover: rgba(255, 255, 255, 0.2);
-  --btn-secondary-border: rgba(255, 255, 255, 0.2);
-  --btn-secondary-border-hover: rgba(255, 255, 255, 0.3);
-  --shadow-sm: rgba(0, 0, 0, 0.1);
-  --shadow-md: rgba(0, 0, 0, 0.3);
-  --shadow-lg: rgba(0, 0, 0, 0.5);
-  --shadow-glow: rgba(239, 68, 68, 0.3);     /* Красное свечение */
-  --shadow-glow-lg: rgba(239, 68, 68, 0.4);  /* Сильное красное свечение */
+  --theme-background: #121212;           /* Основной фон */
+  --theme-background-secondary: #1e1e1e; /* Вторичный фон (карточки, панели) */
+  --theme-background-tertiary: #2a2a2a;  /* Третичный фон (hover состояния) */
+  --theme-background-heavy: #0a0a0a;    /* Тяжелый фон (футер, закрывающие элементы) */
+  --theme-card-bg: #1e1e1e;             /* Фон карточек */
+  --theme-card-hover: #2a2a2a;          /* Фон карточек при hover */
+  --theme-surface: #1e1e1e;             /* Поверхности */
+  --theme-surface-hover: #333333;       /* Поверхности при hover */
+  --theme-border: #333333;              /* Основные границы */
+  --theme-border-light: #444444;        /* Светлые границы */
+  --theme-border-hover: #555555;        /* Границы при hover */
+  --theme-foreground: #ffffff;          /* Основной текст */
+  --theme-text-primary: #ffffff;        /* Первичный текст */
+  --theme-text-secondary: #e5e5e5;      /* Вторичный текст */
+  --theme-text-muted: #888888;          /* Приглушенный текст */
+  --theme-text-disabled: #666666;       /* Отключенный текст */
+  --theme-text-placeholder: #999999;    /* Placeholder текст */
+  --theme-accent: #ff0000;              /* Основной акцентный цвет */
+  --theme-accent-hover: #cc0000;        /* Акцент при hover */
+  --theme-accent-dark: #990000;         /* Темный акцент */
+  --theme-accent-light: #ff3333;        /* Светлый акцент */
+  --theme-success: #10b981;            /* Успех (зеленый) */
+  --theme-success-hover: #059669;      /* Успех при hover */
+  --theme-warning: #f59e0b;            /* Предупреждение (желтый) */
+  --theme-warning-hover: #d97706;      /* Предупреждение при hover */
+  --theme-error: #ef4444;              /* Ошибка (красный) */
+  --theme-error-hover: #dc2626;        /* Ошибка при hover */
+  --theme-info: #3b82f6;               /* Информация (синий) */
+  --theme-info-hover: #2563eb;         /* Информация при hover */
+  --theme-badge-movie: #3b82f6;         /* Бейдж фильма (синий) */
+  --theme-badge-movie-hover: #2563eb;   /* Бейдж фильма при hover */
+  --theme-badge-series: #10b981;        /* Бейдж сериала (зеленый) */
+  --theme-badge-series-hover: #059669;  /* Бейдж сериала при hover */
+  --theme-badge-quality: #f59e0b;       /* Бейдж качества (желтый) */
+  --theme-badge-quality-hover: #d97706; /* Бейдж качества при hover */
+  --theme-badge-trailer: #f97316;       /* Бейдж трейлера (оранжевый) */
+  --theme-badge-trailer-hover: #ea580c; /* Бейдж трейлера при hover */
+  --theme-badge-rating: #ffd700;        /* Рейтинг (золотой) */
+  --theme-badge-rating-text: #000000;   /* Текст на рейтинге */
+  --theme-progress-bg: #4b5563;         /* Фон прогресс-бара */
+  --theme-progress-fill: #ef4444;       /* Заполнение прогресс-бара */
+  --theme-slider-track: #4b5563;        /* Трек слайдера */
+  --theme-slider-thumb: #ef4444;        /* Ползунок слайдера */
+  --theme-slider-thumb-hover: #dc2626;  /* Ползунок при hover */
+  --theme-slider-thumb-border: #ffffff; /* Граница ползунка */
+  --theme-spinner-border: #333333;      /* Граница спиннера */
+  --theme-spinner-accent: #ef4444;      /* Акцент спиннера */
+  --theme-loading-bg: #1f2937;          /* Фон загрузки */
+  --theme-loading-shimmer: #374151;     /* Shimmer эффект */
+  --theme-focus-ring: #ff0000;          /* Кольцо фокуса */
+  --theme-hover-bg: rgba(255, 255, 255, 0.1);  /* Фон при hover */
+  --theme-active-bg: rgba(255, 255, 255, 0.2); /* Фон при активации */
+  --theme-overlay-light: rgba(0, 0, 0, 0.3);    /* Легкий оверлей */
+  --theme-overlay-medium: rgba(0, 0, 0, 0.5);   /* Средний оверлей */
+  --theme-overlay-heavy: rgba(0, 0, 0, 0.8);    /* Тяжелый оверлей */
+  --theme-overlay-backdrop: rgba(0, 0, 0, 0.6); /* Фон модалок */
+  --theme-glass-bg: rgba(30, 30, 30, 0.8);      /* Стеклянный эффект */
+  --theme-glass-border: rgba(255, 255, 255, 0.1); /* Граница стекла */
+  --theme-gradient-primary: linear-gradient(to bottom right, #3b82f6, #9333ea);
+  --theme-btn-primary-bg: linear-gradient(135deg, #ff0000, #cc0000);
+  --theme-btn-primary-hover: linear-gradient(135deg, #cc0000, #990000);
+  --theme-btn-secondary-bg: rgba(255, 255, 255, 0.1);
+  --theme-btn-secondary-hover: rgba(255, 255, 255, 0.2);
+  --theme-btn-secondary-border: rgba(255, 255, 255, 0.2);
+  --theme-btn-secondary-border-hover: rgba(255, 255, 255, 0.3);
+  --theme-shadow-sm: rgba(0, 0, 0, 0.1);
+  --theme-shadow-md: rgba(0, 0, 0, 0.3);
+  --theme-shadow-lg: rgba(0, 0, 0, 0.5);
+  --theme-shadow-glow: rgba(239, 68, 68, 0.3);     /* Красное свечение */
+  --theme-shadow-glow-lg: rgba(239, 68, 68, 0.4);  /* Сильное красное свечение */
 }
 
 body {
-  color: var(--text-primary);
-  background: var(--background);
-  border-color: var(--border);
+  color: var(--theme-text-primary);
+  background: var(--theme-background);
+  border-color: var(--theme-border);
 }

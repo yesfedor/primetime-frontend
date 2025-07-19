@@ -24,7 +24,7 @@
   position: absolute;
   top: var(--liquid-aside-top);
   left: 0;
-  border-right: 1rem solid var(--border);
+  border-right: 1rem solid var(--theme-border);
   overflow-x: hidden;
   overflow-y: auto;
 

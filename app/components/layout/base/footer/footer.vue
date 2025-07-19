@@ -12,6 +12,6 @@
 .app-footer {
   padding: var(--liquid-footer-spacing);
   display: flex;
-  background: var(--background-heavy);
+  background: var(--theme-background-heavy);
 }
 </style>

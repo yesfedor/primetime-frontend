@@ -11,7 +11,7 @@ h1 {
   font-size: 36rem; // text-4xl mobile
   font-weight: 700;
   line-height: 1.1;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 48rem; // text-5xl tablet
@@ -26,7 +26,7 @@ h2 {
   font-size: 24rem; // text-2xl mobile
   font-weight: 700;
   line-height: 1.2;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 30rem; // text-3xl tablet+
@@ -41,7 +41,7 @@ h3, .text-h3 {
   font-size: 20rem; // text-xl
   font-weight: 600;
   line-height: 1.3;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 20rem;
@@ -56,7 +56,7 @@ h4 {
   font-size: 18rem; // text-lg
   font-weight: 600;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 18rem;
@@ -71,7 +71,7 @@ h5 {
   font-size: 16rem; // text-base
   font-weight: 600;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 16rem;
@@ -86,7 +86,7 @@ h6, .text-h6, .text-sm {
   font-size: 14rem; // text-sm
   font-weight: 600;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 14rem;
@@ -107,7 +107,7 @@ p {
   font-size: 16rem; // text-base mobile
   font-weight: 400;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--theme-text-secondary);
 
   @include bp-tablet {
     font-size: 18rem; // text-lg tablet
@@ -131,7 +131,7 @@ label {
   font-size: 14rem; // text-sm
   font-weight: 500;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   display: block;
 
   @include bp-tablet {
@@ -148,7 +148,7 @@ button {
   font-size: 14rem; // text-sm - default button size
   font-weight: 600;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   cursor: pointer;
   border: none;
   background: transparent;
@@ -193,7 +193,7 @@ input, textarea, select {
   font-size: 14rem; // text-sm
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 14rem;
@@ -204,7 +204,7 @@ input, textarea, select {
   }
 
   &::placeholder {
-    color: var(--text-placeholder);
+    color: var(--theme-text-placeholder);
     font-weight: 400;
   }
 }
@@ -214,12 +214,12 @@ a {
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-  color: var(--accent-light);
+  color: var(--theme-accent-light);
   text-decoration: none;
   transition: color 0.3s ease;
 
   &:hover {
-    color: var(--accent);
+    color: var(--theme-accent);
   }
 }
 
@@ -228,7 +228,7 @@ small {
   font-size: 12rem; // text-xs
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-muted);
+  color: var(--theme-text-muted);
 
   @include bp-tablet {
     font-size: 12rem;
@@ -244,8 +244,8 @@ code, pre {
   font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
   font-size: 14rem;
   line-height: 1.4;
-  color: var(--text-primary);
-  background: var(--background-secondary);
+  color: var(--theme-text-primary);
+  background: var(--theme-background-secondary);
   padding: 0.25rem 0.5rem;
   border-radius: 4rem;
 }
@@ -257,7 +257,7 @@ code, pre {
   font-size: 36rem; // text-4xl mobile
   font-weight: 700;
   line-height: 1.1;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 48rem; // text-5xl tablet
@@ -272,7 +272,7 @@ code, pre {
   font-size: 16rem; // text-base mobile
   font-weight: 400;
   line-height: 1.6;
-  color: var(--text-secondary);
+  color: var(--theme-text-secondary);
 
   @include bp-tablet {
     font-size: 18rem; // text-lg tablet
@@ -288,7 +288,7 @@ code, pre {
   font-size: 24rem; // text-2xl mobile
   font-weight: 700;
   line-height: 1.2;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 30rem; // text-3xl tablet+
@@ -303,7 +303,7 @@ code, pre {
   font-size: 14rem; // text-sm
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-muted);
+  color: var(--theme-text-muted);
 
   @include bp-tablet {
     font-size: 14rem;
@@ -319,7 +319,7 @@ code, pre {
   font-size: 14rem; // text-sm
   font-weight: 700;
   line-height: 1.3;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 14rem;
@@ -334,7 +334,7 @@ code, pre {
   font-size: 12rem; // text-xs
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-muted);
+  color: var(--theme-text-muted);
 
   @include bp-tablet {
     font-size: 12rem;
@@ -367,7 +367,7 @@ code, pre {
   font-size: 14rem; // text-sm
   font-weight: 500;
   line-height: 1.4;
-  color: var(--text-secondary);
+  color: var(--theme-text-secondary);
 
   @include bp-tablet {
     font-size: 14rem;
@@ -382,7 +382,7 @@ code, pre {
   font-size: 12rem; // text-xs
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-muted);
+  color: var(--theme-text-muted);
 
   @include bp-tablet {
     font-size: 12rem;
@@ -398,7 +398,7 @@ code, pre {
   font-size: 18rem; // text-lg
   font-weight: 600;
   line-height: 1.3;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 18rem;
@@ -413,7 +413,7 @@ code, pre {
   font-size: 14rem; // text-sm
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   font-variant-numeric: tabular-nums;
 
   @include bp-tablet {
@@ -430,7 +430,7 @@ code, pre {
   font-size: 14rem; // text-sm
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-secondary);
+  color: var(--theme-text-secondary);
 
   @include bp-tablet {
     font-size: 14rem;
@@ -445,7 +445,7 @@ code, pre {
   font-size: 12rem; // text-xs
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-muted);
+  color: var(--theme-text-muted);
 
   @include bp-tablet {
     font-size: 12rem;
@@ -461,7 +461,7 @@ code, pre {
   font-size: 20rem; // text-xl
   font-weight: 700;
   line-height: 1.2;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 20rem;
@@ -476,7 +476,7 @@ code, pre {
   font-size: 12rem; // text-xs
   font-weight: 400;
   line-height: 1.4;
-  color: var(--text-muted);
+  color: var(--theme-text-muted);
 
   @include bp-tablet {
     font-size: 12rem;
@@ -492,7 +492,7 @@ code, pre {
   font-size: 14rem; // text-sm
   font-weight: 700;
   line-height: 1;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   font-variant-numeric: tabular-nums;
 
   @include bp-tablet {
@@ -508,7 +508,7 @@ code, pre {
   font-size: 12rem; // text-xs
   font-weight: 700;
   line-height: 1;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
   font-variant-numeric: tabular-nums;
 
   @include bp-tablet {
@@ -525,7 +525,7 @@ code, pre {
   font-size: 24rem; // text-2xl
   font-weight: 700;
   line-height: 1.2;
-  color: var(--text-primary);
+  color: var(--theme-text-primary);
 
   @include bp-tablet {
     font-size: 24rem;
@@ -540,7 +540,7 @@ code, pre {
   font-size: 16rem; // text-base
   font-weight: 400;
   line-height: 1.5;
-  color: var(--text-secondary);
+  color: var(--theme-text-secondary);
 
   @include bp-tablet {
     font-size: 16rem;

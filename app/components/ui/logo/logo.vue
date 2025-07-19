@@ -26,6 +26,7 @@
       >
         PrimeTime
       </span>
+
       <span
         :class="{
           'logo-subtitle': !isLarge,
@@ -73,8 +74,8 @@ const isLarge = computed(() => props.size === 'large')
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--text-primary);
-    background: var(--btn-primary-bg);
+    color: var(--theme-text-primary);
+    background: var(--theme-gradient-primary);
     border-radius: 12rem;
   }
 

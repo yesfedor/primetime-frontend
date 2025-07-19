@@ -18,8 +18,8 @@
   top: 0;
   left: 0;
   right: 0;
-  background: var(--background);
-  border-bottom: 1rem solid var(--border);
+  background: var(--theme-background);
+  border-bottom: 1rem solid var(--theme-border);
   z-index: z('header');
 }
 </style>
