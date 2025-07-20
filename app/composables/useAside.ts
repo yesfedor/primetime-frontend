@@ -38,9 +38,9 @@ export function useAside() {
 
   return {
     isShow,
+    iconName,
     show,
     close,
     toggle,
-    iconName,
   }
 }
