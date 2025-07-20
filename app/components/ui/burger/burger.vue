@@ -11,8 +11,9 @@ const aside = useAside()
 </script>
 
 <style lang="scss">
-.ui-burger {
+.ui-burger.ui-button {
+  padding: spacing(1) spacing(3);
   color: var(--theme-text-primary);
-  font-size: 24rem;
+  font-size: 32rem;
 }
 </style>

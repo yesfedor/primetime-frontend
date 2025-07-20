@@ -1,10 +1,10 @@
 <template>
   <div class="app-layout-provider">
-    <div class="app-layout-provider --content">
+    <div class="app-layout-provider__content">
       <slot />
     </div>
 
-    <div class="app-layout-provider --dialogs">
+    <div class="app-layout-provider__dialogs">
       <!-- code -->
     </div>
   </div>

@@ -4,6 +4,14 @@
       <ui-burger />
       <ui-logo square-on-mobile />
     </div>
+
+    <div class="app-header__center">
+      <ui-search variant="nav" />
+    </div>
+
+    <div class="app-header__end">
+      end
+    </div>
   </header>
 </template>
 
@@ -15,6 +23,7 @@
 .app-header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 spacing(8);
   height: calc(var(--liquid-header-height) - 1rem);
   position: sticky;
@@ -26,8 +35,28 @@
   z-index: z('header');
 
   &__start {
+    width: 30%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 0 spacing(6);
+  }
+
+  &__center {
+    padding: 0 spacing(6);
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 spacing(6);
+  }
+
+  &__end {
+    padding: 0 spacing(6);
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
     gap: 0 spacing(6);
   }
 }

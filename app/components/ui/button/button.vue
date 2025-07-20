@@ -86,6 +86,7 @@ const tagComponent = computed(() => {
 
 <style lang="scss">
 .ui-button {
+  padding: spacing(1);
   display: flex;
   align-items: center;
   user-select: none;
