@@ -24,6 +24,7 @@ html {
 }
 
 html {
+  max-width: 100vw;
   min-width: calc(360px - $scrollbar-width);
   min-height: 100dvh;
   font-size: var(--liquid-base);

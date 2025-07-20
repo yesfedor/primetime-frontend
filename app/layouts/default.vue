@@ -20,9 +20,11 @@
 
 <style lang="scss">
 .app-layout-default {
+  min-height: 100dvh;
   display: grid;
   gap: 0;
   grid-template-columns: 1fr;
+  grid-template-rows: var(--liquid-header-height) 1fr auto;
   grid-template-areas:
     "header"
     "view"
@@ -30,8 +32,6 @@
 
   @include bp-desktop {
     grid-template-columns: var(--liquid-aside-width) 1fr;
-    grid-template-rows: var(--liquid-header-height) 1fr auto;
-    min-height: 100dvh;
     grid-template-areas:
       "header header"
       "aside view"

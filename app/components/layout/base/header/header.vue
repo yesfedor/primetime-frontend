@@ -10,7 +10,7 @@
     </div>
 
     <div class="app-header__end">
-      end
+      <ui-header-actions />
     </div>
   </header>
 </template>
@@ -24,7 +24,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 spacing(8);
+  padding: 0;
   height: calc(var(--liquid-header-height) - 1rem);
   position: sticky;
   top: 0;
@@ -34,12 +34,20 @@
   border-bottom: 1rem solid var(--theme-border);
   z-index: z('header');
 
+  @include bp-tablet {
+    padding: 0 spacing(8);
+  }
+
   &__start {
     width: 30%;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 0 spacing(6);
+    gap: 0 spacing(3);
+
+    @include bp-tablet {
+      gap: 0 spacing(6);
+    }
   }
 
   &__center {

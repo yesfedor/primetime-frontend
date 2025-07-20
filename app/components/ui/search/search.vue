@@ -67,6 +67,11 @@ const submit = form.handleSubmit(async (values) => {
 <style lang="scss">
 .ui-search {
   width: 100%;
+  display: none;
+
+  @include bp-tablet {
+    display: block;
+  }
 
   &.--variant-nav {
     .ui-input {

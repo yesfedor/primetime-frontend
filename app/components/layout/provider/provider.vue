@@ -15,5 +15,7 @@
 </script>
 
 <style lang="scss">
-
+.app-layout {
+  max-width: 100dvw;
+}
 </style>
