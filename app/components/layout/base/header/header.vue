@@ -1,6 +1,9 @@
 <template>
   <header class="app-header">
-    <ui-logo square-on-mobile />
+    <div class="app-header__start">
+      <ui-burger />
+      <ui-logo square-on-mobile />
+    </div>
   </header>
 </template>
 
@@ -21,5 +24,11 @@
   background: var(--theme-background);
   border-bottom: 1rem solid var(--theme-border);
   z-index: z('header');
+
+  &__start {
+    display: flex;
+    align-items: center;
+    gap: 0 spacing(6);
+  }
 }
 </style>

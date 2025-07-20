@@ -1,36 +1,43 @@
 <template>
-  <aside class="app-aside">
+  <aside
+    :class="{
+      '--show': aside.isShow.value,
+    }"
+    class="app-aside"
+  >
     <div class="app-aside__container">
       <div class="app-aside__content">
-        aside with more links
+        <ui-aside-navigation />
       </div>
-      <div class="app-aside__footer">
-        <span class="nav-text-small">© 2024 PrimeTime</span>
-        <span class="nav-text-small">Онлайн кинотеатр</span>
-        <span class="nav-text-small">О нас</span>
-      </div>
+
+      <ui-aside-footer />
     </div>
   </aside>
 </template>
 
 <script lang="ts" setup>
-
+const aside = useAside()
 </script>
 
 <style lang="scss">
 .app-aside {
+  display: none;
   width: var(--liquid-aside-width);
   height: var(--liquid-aside-height);
-  position: absolute;
+  position: fixed;
   top: var(--liquid-aside-top);
   left: 0;
+  bottom: 0;
+  background: var(--theme-background);
   border-right: 1rem solid var(--theme-border);
   overflow-x: hidden;
   overflow-y: auto;
+  z-index: z('aside');
 
   @include use-scrollbar($scrollbar-width);
 
   @include bp-desktop {
+    display: block;
     position: sticky;
   }
 
@@ -48,10 +55,8 @@
     flex-direction: column;
   }
 
-  &__footer {
-    padding: spacing(8) var(--liquid-aside-content-spacing-x);
-    display: flex;
-    flex-direction: column;
+  &.--show {
+    display: block;
   }
 }
 </style>

@@ -11,11 +11,11 @@
     <label>label label label</label>
     <div>div div div</div>
     <icon name="jam:align-justify" />
-    <ui-button>Hello</ui-button>
   </div>
 </template>
 
 <script lang="ts" setup>
+
 </script>
 
 <style lang="scss">
